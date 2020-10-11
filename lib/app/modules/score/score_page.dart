@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import '../../shared/widgets/weekly_chart.dart';
+import '../../shared/widgets/info_card.dart';
 import 'package:flutter_svg/svg.dart';
 import 'score_controller.dart';
 
@@ -23,85 +24,143 @@ class _ScorePageState extends ModularState<ScorePage, ScoreController> {
       child: Scaffold(
         resizeToAvoidBottomPadding: false,
 //        appBar: buildDetailsAppBar(context),
-        body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 12.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: 10.0),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
-                  CircleAvatar(
-                    backgroundImage: NetworkImage(controller.avatar),
-                  ),
-                ],
-              ),
-              SizedBox(height: 12),
-              Text("Score",
-                  style: textTheme.headline5
-                      .copyWith(fontWeight: FontWeight.w600)),
-              Text(
-                "Acompanhe sua pontuação geral",
-                style: textTheme.subtitle1.copyWith(
-                  color: colorScheme.onPrimary.withOpacity(0.5),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 10.0),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    CircleAvatar(
+                      backgroundImage: NetworkImage(controller.avatar),
+                    ),
+                  ],
                 ),
-              ),
-              SizedBox(height: 20.0),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 5),
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: <Widget>[
-                      Container(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 20, vertical: 25),
-                        decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(.1),
-                          borderRadius: BorderRadius.circular(20),
-                          boxShadow: [
-                            BoxShadow(
-                              offset: Offset(0, 21),
-                              blurRadius: 53,
-                              color: Colors.black.withOpacity(0.05),
-                            ),
-                          ],
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            buildTitleWithMoreIcon(),
-                            buildCaseNumber(context),
-                            Text(
-                              "Quase lá, continue progredindo",
-                              style: TextStyle(
-                                fontWeight: FontWeight.w200,
-                                color: Colors.white,
-                                fontSize: 16,
+                SizedBox(height: 12),
+                Text("Score",
+                    style: textTheme.headline5
+                        .copyWith(fontWeight: FontWeight.w600)),
+                Text(
+                  "Acompanhe sua pontuação geral",
+                  style: textTheme.subtitle1.copyWith(
+                    color: colorScheme.onPrimary.withOpacity(0.5),
+                  ),
+                ),
+                SizedBox(height: 20.0),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 20,
+                            vertical: 25,
+                          ),
+                          decoration: BoxDecoration(
+                            color: Colors.white.withOpacity(.1),
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow: [
+                              BoxShadow(
+                                offset: Offset(0, 21),
+                                blurRadius: 53,
+                                color: Colors.black.withOpacity(0.05),
                               ),
-                            ),
-                            SizedBox(height: 15),
-                            WeeklyChart(),
-                            SizedBox(height: 15),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: <Widget>[
-                                buildInfoTextWithPercentage(
-                                  percentage: "6.43",
-                                  title: "Progresso na última semana",
+                            ],
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              buildTitleWithMoreIcon(),
+                              buildCaseNumber(context),
+                              Text(
+                                "Quase lá, continue progredindo",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w200,
+                                  color: Colors.white,
+                                  fontSize: 16,
                                 ),
-                              ],
-                            )
-                          ],
+                              ),
+                              SizedBox(height: 15),
+                              WeeklyChart(),
+                              SizedBox(height: 15),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  buildInfoTextWithPercentage(
+                                    percentage: "6.43",
+                                    title: "Progresso na última semana",
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 20),
-                    ],
+                        SizedBox(height: 20),
+                        Container(
+                          padding: EdgeInsets.all(0),
+                          decoration: BoxDecoration(
+//                            color: Colors.white.withOpacity(.1),
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow: [
+                              BoxShadow(
+                                offset: Offset(0, 21),
+                                blurRadius: 54,
+                                color: Colors.black.withOpacity(0.05),
+                              ),
+                            ],
+                          ),
+                          child: Column(
+                            children: <Widget>[
+                              Wrap(
+                                runSpacing: 20,
+                                spacing: 20,
+                                children: <Widget>[
+                                  InfoCard(
+                                    title: "Conhecimento \nde Mercado",
+                                    iconColor: Color(0xFF5856D6),
+                                    effectedNum: 1062,
+                                    iconImage: "map",
+                                    press: () {},
+                                  ),
+                                  InfoCard(
+                                    title: "Gestão \nFinanceira",
+                                    iconColor: Color(0xFFFF2D55),
+                                    iconImage: "running",
+                                    effectedNum: 75,
+                                    press: () {},
+                                  ),
+                                  InfoCard(
+                                    title: "Gestão \nOperacional",
+                                    iconColor: Color(0xFF50E3C2),
+                                    iconImage: "person",
+                                    effectedNum: 689,
+                                    press: () {},
+                                  ),
+                                  InfoCard(
+                                    title: "Gestão \nde Marketing",
+                                    iconColor: Color(0xFFFF8C00),
+                                    iconImage: "search",
+                                    effectedNum: 75,
+                                    press: () {},
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 30.0),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
