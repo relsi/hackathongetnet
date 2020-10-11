@@ -20,7 +20,7 @@ class _MarketingManagementPageState
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
-          color: Color(0xFFF5F4EF),
+          color: Color(0xFFf2d899),
         ),
         child: Column(
           children: <Widget>[

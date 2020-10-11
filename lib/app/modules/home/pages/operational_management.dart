@@ -21,7 +21,7 @@ class _OperationalManagementPageState
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
-          color: Color(0xFFF5F4EF),
+          color: Color(0xFFc1e2aa),
         ),
         child: Column(
           children: <Widget>[

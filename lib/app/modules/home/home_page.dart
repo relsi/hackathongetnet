@@ -23,27 +23,20 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
-                // Todo: Alterar o placeholder para icone de menu
-                Placeholder(
-                  color: Colors.red,
-                  fallbackHeight: 40.0,
-                  fallbackWidth: 40.0,
-                ),
-                // Todo: Alterar o placeholder para Image.asset() ou Button
-                Placeholder(
-                  color: Colors.green,
-                  fallbackHeight: 40.0,
-                  fallbackWidth: 40.0,
+                CircleAvatar(
+                  radius: 25.0,
+                  backgroundImage: AssetImage("assets/images/avatar.png"),
                 ),
               ],
             ),
             SizedBox(height: 12),
             Text("Olá Luciano,", style: kHeadingextStyle),
+            SizedBox(height: 5),
             Text("Vamos começar a sua jornada de conhecimento sobre negócios",
                 style: kSubheadingextStyle),
-            SizedBox(height: 30),
+            SizedBox(height: 25),
             Expanded(
               child: StaggeredGridView.countBuilder(
                 physics: BouncingScrollPhysics(),
@@ -62,12 +55,14 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                       height: 200,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
-                        color: Colors.amber,
-                        // Todo: Adicionar a imagem de fundo do card
-                        // image: DecorationImage(
-                        //   image: AssetImage(categories[index].image),
-                        //   fit: BoxFit.fill,
-                        // ),
+                        color: categories[index].colour,
+                        image: DecorationImage(
+                          alignment: Alignment.bottomCenter,
+                          image: AssetImage('assets/images/' +
+                              categories[index].slug +
+                              '.png'),
+                          fit: BoxFit.fitWidth,
+                        ),
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,

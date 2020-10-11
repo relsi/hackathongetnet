@@ -20,7 +20,7 @@ class _MarketknowledgePageState
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
-          color: Color(0xFFF5F4EF),
+          color: Color(0xFFbed1f7),
         ),
         child: Column(
           children: <Widget>[
