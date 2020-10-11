@@ -3,7 +3,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import '../model/category.dart';
 
 class CourseDetails extends StatefulWidget {
-  final Category course;
+  final Courses course;
   const CourseDetails({Key key, @required this.course}) : super(key: key);
 
   @override
@@ -51,12 +51,14 @@ class _CourseDetailsState extends State<CourseDetails> {
                   ),
                   SizedBox(height: 24),
                   Text(
-                    widget.course.name,
+                    widget.course.title,
                     style: textTheme.headline5.copyWith(color: Colors.white, fontWeight: FontWeight.bold, height: 1),
                   ),
                   SizedBox(height: 5.0),
                   Text(
                     widget.course.subtitle,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 4,
                     style: textTheme.subtitle1.copyWith(color: Colors.white.withOpacity(0.8)),
                   ),
                   SizedBox(height: 10),
@@ -99,37 +101,57 @@ class _CourseDetailsState extends State<CourseDetails> {
                   children: <Widget>[
                     Padding(
                       padding: const EdgeInsets.only(top: 30.0, left: 20.0, right: 20.0),
-                      child: SingleChildScrollView(
-                        physics: BouncingScrollPhysics(),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Text("Conteúdo", style: textTheme.headline6),
-                            SizedBox(height: 20),
-                            CourseContent(
-                              number: "01",
-                              duration: 5.35,
-                              title: "Módulo 1 - Introdução",
-                              isDone: true,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Text("Conteúdo", style: textTheme.headline6),
+                          SizedBox(height: 10),
+                          Expanded(
+                            child: ListView.builder(
+                              physics: BouncingScrollPhysics(),
+                              itemCount: widget.course.lessons.length,
+                              itemBuilder: (BuildContext context, int index) {
+                                final _lesson = widget.course.lessons[index];
+
+                                return ListTile(
+                                  leading: Text(
+                                    "0$index",
+                                    style: textTheme.headline6.copyWith(
+                                      color: colorScheme.onPrimary.withOpacity(.25),
+                                      fontSize: 32,
+                                    ),
+                                  ),
+                                  title: Text(
+                                    _lesson.title,
+                                    overflow: TextOverflow.ellipsis,
+                                    maxLines: 1,
+                                    style: textTheme.subtitle1.copyWith(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                  subtitle: Text(
+                                    _lesson.duration,
+                                    style: TextStyle(
+                                      color: colorScheme.onPrimary.withOpacity(.5),
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                  trailing: Container(
+                                    //margin: EdgeInsets.only(left: 20),
+                                    height: 40,
+                                    width: 40,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: colorScheme.primary.withOpacity(_lesson.completed ? 1 : .5),
+                                    ),
+                                    child: Icon(Icons.play_arrow, color: Colors.white),
+                                  ),
+                                );
+                              },
                             ),
-                            CourseContent(
-                              number: '02',
-                              duration: 19.04,
-                              title: "Módulo 2 - Fluxo de Caixa",
-                              isDone: true,
-                            ),
-                            CourseContent(
-                              number: '03',
-                              duration: 15.35,
-                              title: "Módulo 3 - Provisionamento ",
-                            ),
-                            CourseContent(
-                              number: '04',
-                              duration: 5.35,
-                              title: "Módulo 4 - Contabilidade Básica",
-                            ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
@@ -138,92 +160,6 @@ class _CourseDetailsState extends State<CourseDetails> {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class BestSellerClipper extends CustomClipper<Path> {
-  @override
-  getClip(Size size) {
-    var path = Path();
-    path.lineTo(size.width - 20, 0);
-    path.lineTo(size.width, size.height / 2);
-    path.lineTo(size.width - 20, size.height);
-    path.lineTo(0, size.height);
-    path.lineTo(0, 0);
-    path.close();
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper oldClipper) {
-    return false;
-  }
-}
-
-class CourseContent extends StatelessWidget {
-  final String number;
-  final double duration;
-  final String title;
-  final bool isDone;
-  const CourseContent({
-    Key key,
-    this.number,
-    this.duration,
-    this.title,
-    this.isDone = false,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
-    final textTheme = Theme.of(context).textTheme;
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 30),
-      child: Row(
-        children: <Widget>[
-          Text(
-            number,
-            style: textTheme.headline6.copyWith(
-              color: colorScheme.onPrimary.withOpacity(.25),
-              fontSize: 32,
-            ),
-          ),
-          SizedBox(width: 20),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                overflow: TextOverflow.ellipsis,
-                maxLines: 1,
-                style: textTheme.subtitle1.copyWith(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 14,
-                ),
-              ),
-              Text(
-                "$duration min",
-                style: TextStyle(
-                  color: colorScheme.onPrimary.withOpacity(.5),
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          Spacer(),
-          Container(
-            margin: EdgeInsets.only(left: 20),
-            height: 40,
-            width: 40,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: colorScheme.primary.withOpacity(isDone ? 1 : .5),
-            ),
-            child: Icon(Icons.play_arrow, color: Colors.white),
-          )
-        ],
       ),
     );
   }

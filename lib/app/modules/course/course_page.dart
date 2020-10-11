@@ -62,25 +62,26 @@ class _CoursePageState extends ModularState<CoursePage, CourseController> {
               Expanded(
                 child: GridView.builder(
                   physics: BouncingScrollPhysics(),
-                  itemCount: categories.length,
+                  itemCount: controller.courses.length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     crossAxisSpacing: 20,
                     mainAxisSpacing: 20,
                   ),
                   itemBuilder: (BuildContext context, int index) {
+                    final Courses _courses = controller.courses[index];
                     return GestureDetector(
                       onTap: () {
-                        Navigator.of(context).pushNamed("/details", arguments: categories[index]);
+                        Navigator.of(context).pushNamed("/details", arguments: _courses);
                       },
                       child: Container(
                         padding: EdgeInsets.all(15),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(16),
-                          color: categories[index].colour,
+                          color: _courses.colour,
                           image: DecorationImage(
                             alignment: Alignment.bottomCenter,
-                            image: AssetImage('assets/images/' + categories[index].slug + '.png'),
+                            image: AssetImage('assets/images/' + _courses.slug + '.png'),
                             fit: BoxFit.fitWidth,
                           ),
                         ),
@@ -88,11 +89,11 @@ class _CoursePageState extends ModularState<CoursePage, CourseController> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Text(
-                              categories[index].name,
+                              _courses.title,
                               style: textTheme.subtitle1.copyWith(color: Colors.white),
                             ),
                             Text(
-                              '${categories[index].numOfCourses} Modulos',
+                              '${_courses.modules} Modulos',
                               style: TextStyle(
                                 color: Colors.white.withOpacity(.5),
                               ),
