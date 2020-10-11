@@ -28,19 +28,21 @@ class _CoursePageState extends ModularState<CoursePage, CourseController> {
               SizedBox(height: 10.0),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
-                  Icon(
-                    Icons.menu,
-                    color: colorScheme.onPrimary,
-                  ),
+//                  Icon(
+//                    Icons.menu,
+//                    color: colorScheme.onPrimary,
+//                  ),
                   CircleAvatar(
                     backgroundImage: NetworkImage(controller.avatar),
                   ),
                 ],
               ),
               SizedBox(height: 12),
-              Text("Olá Pedro,", style: textTheme.headline5.copyWith(fontWeight: FontWeight.w600)),
+              Text("Olá Pedro,",
+                  style: textTheme.headline5
+                      .copyWith(fontWeight: FontWeight.w600)),
               Text(
                 "Encontre o curso que deseja aprender",
                 style: textTheme.subtitle1.copyWith(
@@ -54,7 +56,8 @@ class _CoursePageState extends ModularState<CoursePage, CourseController> {
                   Text("Cursos", style: textTheme.headline6),
                   Text(
                     "Ver todos",
-                    style: textTheme.subtitle1.copyWith(color: colorScheme.primary),
+                    style: textTheme.subtitle1
+                        .copyWith(color: colorScheme.primary),
                   ),
                 ],
               ),
@@ -71,7 +74,8 @@ class _CoursePageState extends ModularState<CoursePage, CourseController> {
                   itemBuilder: (BuildContext context, int index) {
                     return GestureDetector(
                       onTap: () {
-                        Navigator.of(context).pushNamed("/details", arguments: categories[index]);
+                        Navigator.of(context).pushNamed("/details",
+                            arguments: categories[index]);
                       },
                       child: Container(
                         padding: EdgeInsets.all(15),
@@ -80,7 +84,9 @@ class _CoursePageState extends ModularState<CoursePage, CourseController> {
                           color: categories[index].colour,
                           image: DecorationImage(
                             alignment: Alignment.bottomCenter,
-                            image: AssetImage('assets/images/' + categories[index].slug + '.png'),
+                            image: AssetImage('assets/images/' +
+                                categories[index].slug +
+                                '.png'),
                             fit: BoxFit.fitWidth,
                           ),
                         ),
@@ -89,7 +95,8 @@ class _CoursePageState extends ModularState<CoursePage, CourseController> {
                           children: <Widget>[
                             Text(
                               categories[index].name,
-                              style: textTheme.subtitle1.copyWith(color: Colors.white),
+                              style: textTheme.subtitle1
+                                  .copyWith(color: Colors.white),
                             ),
                             Text(
                               '${categories[index].numOfCourses} Modulos',

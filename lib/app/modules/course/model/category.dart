@@ -27,15 +27,17 @@ var categoriesData = [
   {
     "name": "Conhecimento de Mercado",
     'slug': "empreendedorismo",
-    'subtitle': "Nessa trilha você vai aprender a fazer análises, criar planos de negócios, e conhecer as ferramentas essenciais para o sucesso de qualquer empreendimento.",
-    'colour': Color(0xFFbed1f7),
+    'subtitle':
+        "Nessa trilha você vai aprender a fazer análises, criar planos de negócios, e conhecer as ferramentas essenciais para o sucesso de qualquer empreendimento.",
+    'colour': Color(0xFF8568ff),
     'courses': 05,
   },
   {
     "name": "Gestão Financeira",
     'slug': "gestao_financeira",
-    'subtitle': "Nessa trilha você irá aprender como fazer a gestão financeira de seu negócio de forma correta e poderá usar esse conhecimento para melhorar a saúde finaceira do seu negócio.",
-    'colour': Color(0xFFe7c0c0),
+    'subtitle':
+        "Nessa trilha você irá aprender como fazer a gestão financeira de seu negócio de forma correta e poderá usar esse conhecimento para melhorar a saúde finaceira do seu negócio.",
+    'colour': Color(0xFFff8383),
     'courses': 10,
   },
   {
@@ -43,7 +45,7 @@ var categoriesData = [
     'slug': "gestao_operacional",
     'subtitle':
         "Gestão operacional é uma atividades chave de qualquer empreendimento, pois é através dela que temos o controle de todos as operações desenvolvidas no negócio. Vamos aprender nessa trilha como construir uma gestão operacional sólida para o seu negócio..",
-    'colour': Color(0xFFc1e2aa),
+    'colour': Color(0xFF9bc27e),
     'courses': 10,
   },
   {
@@ -51,7 +53,7 @@ var categoriesData = [
     'slug': "gestao_marketing",
     'subtitle':
         "Gestão de marketing é é um fator crucial para o sucesso de qualquer empreendimento, pois é através dela que podemos alcançar os resultados desejados. Você aprenderá nessa trilha a criar e gerir campanhas de marketing para alavancar seus negócios.",
-    'colour': Color(0xFFf2d899),
+    'colour': Color(0xFFeec35e),
     'courses': 15,
   }
 ];
