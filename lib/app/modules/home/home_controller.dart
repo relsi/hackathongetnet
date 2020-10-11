@@ -7,11 +7,11 @@ part 'home_controller.g.dart';
 class HomeController = _HomeControllerBase with _$HomeController;
 
 abstract class _HomeControllerBase with Store {
+  // Observables
   @observable
-  int value = 0;
+  int indexPage = 0;
 
+  // Actions
   @action
-  void increment() {
-    value++;
-  }
+  void setPage(int index) => indexPage = index;
 }

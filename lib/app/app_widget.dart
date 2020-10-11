@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+import 'shared/theme/app_theme.dart';
 import 'shared/utils/constants.dart';
 
 class AppWidget extends StatelessWidget {
@@ -10,10 +11,9 @@ class AppWidget extends StatelessWidget {
       navigatorKey: Modular.navigatorKey,
       debugShowCheckedModeBanner: false,
       title: 'PlayCred',
-      theme: ThemeData(
-        primaryColor: kPrimaryColor,
-        scaffoldBackgroundColor: Colors.white,
-      ),
+      themeMode: ThemeMode.dark,
+      theme: AppTheme.lightThemeData,
+      darkTheme: AppTheme.darkThemeData,
       initialRoute: '/',
       onGenerateRoute: Modular.generateRoute,
     );

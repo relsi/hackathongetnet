@@ -3,12 +3,9 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:play_cred/app/shared/widgets/already_have_an_account_acheck.dart';
 import 'package:play_cred/app/shared/widgets/rounded_button.dart';
-import 'package:play_cred/app/shared/widgets/rounded_input_field.dart';
-import 'package:play_cred/app/shared/widgets/rounded_password_field.dart';
+import 'package:play_cred/app/shared/widgets/rounder_text_field.dart';
 
 import 'signup_controller.dart';
-import 'widgets/or_divider.dart';
-import 'widgets/social_icon.dart';
 
 class SignupPage extends StatefulWidget {
   final String title;
@@ -19,10 +16,12 @@ class SignupPage extends StatefulWidget {
 }
 
 class _SignupPageState extends ModularState<SignupPage, SignupController> {
+  //use 'controller' variable to access controller
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    final colorScheme = Theme.of(context).colorScheme;
     return Scaffold(
         body: Container(
       height: size.height,
@@ -30,44 +29,50 @@ class _SignupPageState extends ModularState<SignupPage, SignupController> {
       child: Stack(
         alignment: Alignment.center,
         children: <Widget>[
-          Positioned(
-            top: 0,
-            left: 0,
-            // Todo: Alterar o placeholder para Image.asset com height: size.height * 0.35,
-            child: Placeholder(
-              color: Colors.yellow,
-              fallbackWidth: size.height * 0.35,
-            ),
-          ),
-          Positioned(
-            bottom: 0,
-            left: 0,
-            // Todo: Alterar o placeholder para Image.asset com height: size.height * 0.25,
-            child: Placeholder(
-              color: Colors.red,
-              fallbackWidth: size.height * 0.25,
-            ),
-          ),
+          // Positioned(
+          //   top: 0,
+          //   left: 0,
+          //   // Todo: Alterar o placeholder para Image.asset com height: size.height * 0.35,
+          //   child: Placeholder(
+          //     color: Colors.yellow,
+          //     fallbackWidth: size.height * 0.35,
+          //   ),
+          // ),
+          // Positioned(
+          //   bottom: 0,
+          //   left: 0,
+          //   // Todo: Alterar o placeholder para Image.asset com height: size.height * 0.25,
+          //   child: Placeholder(
+          //     color: Colors.red,
+          //     fallbackWidth: size.height * 0.25,
+          //   ),
+          // ),
           SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text(
-                  "SIGNUP",
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                // Text(
+                //   "SIGNUP",
+                //   style: TextStyle(fontWeight: FontWeight.bold),
+                // ),
+                SizedBox(height: size.height * 0.03),
+                SvgPicture.asset(
+                  "assets/icons/signup.svg",
+                  width: size.width * 0.55,
                 ),
                 SizedBox(height: size.height * 0.03),
-                // Todo: Alterar o placeholder para SvgPicture.asset com height: size.height * 0.35,
-                Placeholder(
-                  color: Colors.green,
-                  fallbackHeight: size.height * 0.35,
-                ),
-
-                RoundedInputField(
-                  hintText: "Your Email",
+                RoundedTextField(
+                  icon: Icons.person,
+                  iconColor: colorScheme.primary,
+                  hintText: "Seu Email",
                   onChanged: (value) {},
                 ),
-                RoundedPasswordField(
+                RoundedTextField(
+                  icon: Icons.lock,
+                  suffixIcon: Icons.visibility,
+                  iconColor: colorScheme.primary,
+                  hintText: "Senha",
+                  obscureText: true,
                   onChanged: (value) {},
                 ),
                 RoundedButton(
@@ -81,30 +86,30 @@ class _SignupPageState extends ModularState<SignupPage, SignupController> {
                     Modular.to.pop();
                   },
                 ),
-                OrDivider(),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    // Todo: Alterar o placeholder para classe SocialIcon do facebook
-                    Placeholder(
-                      color: Colors.green,
-                      fallbackHeight: 40.0,
-                      fallbackWidth: 40.0,
-                    ),
-                    // Todo: Alterar o placeholder para classe SocialIcon do twitter
-                    Placeholder(
-                      color: Colors.purple,
-                      fallbackHeight: 40.0,
-                      fallbackWidth: 40.0,
-                    ),
-                    // Todo: Alterar o placeholder para classe SocialIcon do google-plus
-                    Placeholder(
-                      color: Colors.orange,
-                      fallbackHeight: 40.0,
-                      fallbackWidth: 40.0,
-                    ),
-                  ],
-                )
+                //OrDivider(),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   children: <Widget>[
+                //     // Todo: Alterar o placeholder para classe SocialIcon do facebook
+                //     Placeholder(
+                //       color: Colors.green,
+                //       fallbackHeight: 40.0,
+                //       fallbackWidth: 40.0,
+                //     ),
+                //     // Todo: Alterar o placeholder para classe SocialIcon do twitter
+                //     Placeholder(
+                //       color: Colors.purple,
+                //       fallbackHeight: 40.0,
+                //       fallbackWidth: 40.0,
+                //     ),
+                //     // Todo: Alterar o placeholder para classe SocialIcon do google-plus
+                //     Placeholder(
+                //       color: Colors.orange,
+                //       fallbackHeight: 40.0,
+                //       fallbackWidth: 40.0,
+                //     ),
+                //   ],
+                // )
               ],
             ),
           ),

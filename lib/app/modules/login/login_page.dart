@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:play_cred/app/shared/utils/constants.dart';
 
 import '../../shared/widgets/already_have_an_account_acheck.dart';
 import '../../shared/widgets/rounded_button.dart';
-import '../../shared/widgets/rounded_input_field.dart';
-import '../../shared/widgets/rounded_password_field.dart';
+import '../../shared/widgets/rounder_text_field.dart';
 import 'login_controller.dart';
 
 class LoginPage extends StatefulWidget {
@@ -21,58 +21,66 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    final colorScheme = Theme.of(context).colorScheme;
     return Scaffold(
+      backgroundColor: colorScheme.background,
       body: Container(
         width: double.infinity,
         height: size.height,
         child: Stack(
           alignment: Alignment.center,
           children: <Widget>[
-            Positioned(
-              top: 0,
-              left: 0,
-              // Todo: Alterar o placeholder para Image.asset com width: size.width * 0.35,
-              child: Placeholder(
-                color: Colors.red,
-                fallbackWidth: size.height * 0.35,
-              ),
-            ),
-            // Todo: Alterar o placeholder para Image.asset com width: size.width * 0.4,
-            Positioned(
-              bottom: 0,
-              right: 0,
-              child: Placeholder(
-                color: Colors.green,
-                fallbackWidth: size.width * 0.4,
-              ),
-            ),
+            // Positioned(
+            //   top: 0,
+            //   left: 0,
+            //   child: Image.asset(
+            //     "assets/images/login_top.png",
+            //     width: size.width * 0.35,
+            //   ),
+            // ),
+            // Positioned(
+            //   bottom: 0,
+            //   right: 0,
+            //   child: Image.asset(
+            //     "assets/images/login_bottom.png",
+            //     width: size.width * 0.4,
+            //   ),
+            // ),
             SingleChildScrollView(
               physics: BouncingScrollPhysics(),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text(
-                    "LOGIN",
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                  // Text(
+                  //   "LOGIN",
+                  //   style: TextStyle(fontWeight: FontWeight.bold),
+                  // ),
+                  SizedBox(height: size.height * 0.03),
+                  SvgPicture.asset(
+                    "assets/icons/login.svg",
+                    width: size.width * 0.55,
                   ),
                   SizedBox(height: size.height * 0.03),
-                  // Todo: Alterar o placeholder para SvgPicture.asset com height: size.height * 0.35,
-                  Placeholder(
-                    color: Colors.yellow,
-                    fallbackHeight: size.height * 0.35,
-                  ),
-                  SizedBox(height: size.height * 0.03),
-                  RoundedInputField(
-                    hintText: "Your Email",
+                  RoundedTextField(
+                    icon: Icons.person,
+                    iconColor: colorScheme.primary,
+                    hintText: "Seu Email",
                     onChanged: (value) {},
                   ),
-                  RoundedPasswordField(
+                  RoundedTextField(
+                    icon: Icons.lock,
+                    iconColor: colorScheme.primary,
+                    suffixIcon: Icons.visibility,
+                    hintText: "Senha",
+                    obscureText: true,
                     onChanged: (value) {},
                   ),
                   RoundedButton(
                     text: "LOGIN",
                     press: () {
-                      Modular.to.pushNamed('/home');
+                      //Modular.to.pushNamed('/home');
+                      //Navigator.of(context).pushNamed("/home");
+                      Navigator.pushNamed(context, '/home');
                     },
                   ),
                   SizedBox(height: size.height * 0.03),

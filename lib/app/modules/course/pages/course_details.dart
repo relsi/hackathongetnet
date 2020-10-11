@@ -1,27 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import '../model/category.dart';
 
-import '../../../shared/utils/constants.dart';
-import '../home_controller.dart';
-
-class FinancialManagementPage extends StatefulWidget {
-  const FinancialManagementPage({Key key}) : super(key: key);
+class CourseDetails extends StatefulWidget {
+  final Category course;
+  const CourseDetails({Key key, @required this.course}) : super(key: key);
 
   @override
-  _FinancialManagementPageState createState() =>
-      _FinancialManagementPageState();
+  _CourseDetailsState createState() => _CourseDetailsState();
 }
 
-class _FinancialManagementPageState
-    extends ModularState<FinancialManagementPage, HomeController> {
+class _CourseDetailsState extends State<CourseDetails> {
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+    final textTheme = Theme.of(context).textTheme;
     return Scaffold(
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
-          color: Color(0xFFe7c0c0),
+          color: widget.course.colour,
         ),
         child: Column(
           children: <Widget>[
@@ -35,70 +33,79 @@ class _FinancialManagementPageState
                     children: <Widget>[
                       GestureDetector(
                         onTap: () {
-                          Modular.to.pop();
+                          Navigator.pop(context);
                         },
-                        child: Icon(Icons.arrow_back),
+                        child: Icon(
+                          Icons.arrow_back,
+                          color: Colors.white,
+                        ),
                       ),
                       GestureDetector(
                         onTap: () {},
-                        child: Icon(Icons.more_vert),
+                        child: Icon(
+                          Icons.more_vert,
+                          color: Colors.white,
+                        ),
                       ),
                     ],
                   ),
                   SizedBox(height: 24),
-                  Text("Gestão Financeira", style: kHeadingextStyle),
                   Text(
-                      "Nessa trilha você irá aprender como fazer a gestão financeira de seu negócio de forma correta e poderá usar esse conhecimento para melhorar a saúde finaceira do seu negócio.",
-                      style: kSubtitleTextSyule),
-                  SizedBox(height: 5),
+                    widget.course.name,
+                    style: textTheme.headline5.copyWith(color: Colors.white, fontWeight: FontWeight.bold, height: 1),
+                  ),
+                  SizedBox(height: 5.0),
+                  Text(
+                    widget.course.subtitle,
+                    style: textTheme.subtitle1.copyWith(color: Colors.white.withOpacity(0.8)),
+                  ),
+                  SizedBox(height: 10),
                   Row(
                     children: <Widget>[
-                      // Todo: Alterar o placeholder para icone de usuarios
-                      Placeholder(
-                        color: Colors.red,
-                        fallbackHeight: 12.0,
-                        fallbackWidth: 12.0,
+                      Icon(
+                        Icons.people,
+                        color: Colors.white,
                       ),
                       SizedBox(width: 5),
-                      Text("18K"),
+                      Text(
+                        "18K",
+                        style: TextStyle(color: Colors.white),
+                      ),
                       SizedBox(width: 20),
-                      // Todo: Alterar o placeholder para icone de usuarios
-                      Placeholder(
-                        color: Colors.green,
-                        fallbackHeight: 12.0,
-                        fallbackWidth: 12.0,
-                      ),
+                      Icon(Icons.play_arrow, color: Colors.white),
                       SizedBox(width: 5),
-                      Text("4.8")
+                      Text(
+                        "4.8",
+                        style: TextStyle(color: Colors.white),
+                      )
                     ],
                   ),
                   SizedBox(height: 20),
                 ],
               ),
             ),
-            SizedBox(height: 60),
+            SizedBox(height: 10),
             Expanded(
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(34.0),
-                    topRight: Radius.circular(34.0),
+                    topLeft: Radius.circular(50.0),
+                    topRight: Radius.circular(50.0),
                   ),
-                  color: Colors.white,
+                  color: colorScheme.background,
                 ),
                 child: Stack(
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.only(
-                          top: 30.0, left: 20.0, right: 20.0),
+                      padding: const EdgeInsets.only(top: 30.0, left: 20.0, right: 20.0),
                       child: SingleChildScrollView(
                         physics: BouncingScrollPhysics(),
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
-                            Text("Conteúdo", style: kTitleTextStyle),
-                            SizedBox(height: 30),
+                            Text("Conteúdo", style: textTheme.headline6),
+                            SizedBox(height: 20),
                             CourseContent(
                               number: "01",
                               duration: 5.35,
@@ -170,14 +177,16 @@ class CourseContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+    final textTheme = Theme.of(context).textTheme;
     return Padding(
       padding: const EdgeInsets.only(bottom: 30),
       child: Row(
         children: <Widget>[
           Text(
             number,
-            style: kHeadingextStyle.copyWith(
-              color: kTextColor.withOpacity(.15),
+            style: textTheme.headline6.copyWith(
+              color: colorScheme.onPrimary.withOpacity(.25),
               fontSize: 32,
             ),
           ),
@@ -186,18 +195,18 @@ class CourseContent extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "$duration min",
-                style: TextStyle(
-                  color: kTextColor.withOpacity(.5),
-                  fontSize: 18,
-                ),
-              ),
-              Text(
                 title,
                 overflow: TextOverflow.ellipsis,
                 maxLines: 1,
-                style: kSubtitleTextSyule.copyWith(
+                style: textTheme.subtitle1.copyWith(
                   fontWeight: FontWeight.w600,
+                  fontSize: 14,
+                ),
+              ),
+              Text(
+                "$duration min",
+                style: TextStyle(
+                  color: colorScheme.onPrimary.withOpacity(.5),
                   fontSize: 14,
                 ),
               ),
@@ -210,7 +219,7 @@ class CourseContent extends StatelessWidget {
             width: 40,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: kGreenColor.withOpacity(isDone ? 1 : .5),
+              color: colorScheme.primary.withOpacity(isDone ? 1 : .5),
             ),
             child: Icon(Icons.play_arrow, color: Colors.white),
           )
