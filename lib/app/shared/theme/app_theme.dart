@@ -33,7 +33,7 @@ class AppTheme {
   static const ColorScheme lightColorScheme = ColorScheme(
     primary: Color(0xFFF71603),
     primaryVariant: Color(0xFFF1E6FF),
-    secondary: Color(0xFF00CD6B),
+    secondary: Color(0xFF2ECC71),
     secondaryVariant: Color(0xFF00CD6B),
     background: Colors.white,
     surface: Color(0xFFFAFBFB),
@@ -50,7 +50,7 @@ class AppTheme {
   static const ColorScheme darkColorScheme = ColorScheme(
     primary: Color(0xFFF71603),
     primaryVariant: Color(0xFFF1E6FF),
-    secondary: Color(0xFF00CD6B),
+    secondary: Color(0xFF2ECC71),
     secondaryVariant: Color(0xFF00CD6B),
     background: Color(0xFF0B1220),
     surface: Color(0xFF111727),

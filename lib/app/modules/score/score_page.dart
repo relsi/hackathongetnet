@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import '../../shared/widgets/weekly_chart.dart';
-import '../../shared/widgets/info_card.dart';
+import 'widgets/weekly_chart.dart';
+import 'widgets/info_card.dart';
 import 'package:flutter_svg/svg.dart';
 import 'score_controller.dart';
 
