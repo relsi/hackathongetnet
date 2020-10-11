@@ -18,6 +18,7 @@ class _CoursePageState extends ModularState<CoursePage, CourseController> {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
+    final lightColor = Color(0xFF111727);
     return SafeArea(
       child: Scaffold(
         body: Padding(
@@ -30,15 +31,17 @@ class _CoursePageState extends ModularState<CoursePage, CourseController> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
+//                  Icon(
+//                    Icons.menu,
+//                    color: colorScheme.onPrimary,
+//                  ),
                   CircleAvatar(
                     backgroundImage: NetworkImage(controller.avatar),
                   ),
                 ],
               ),
               SizedBox(height: 12),
-              Text("Olá Pedro,",
-                  style: textTheme.headline5
-                      .copyWith(fontWeight: FontWeight.w600)),
+              Text("Olá Pedro,", style: textTheme.headline5.copyWith(fontWeight: FontWeight.w600)),
               Text(
                 "Encontre o curso que deseja aprender",
                 style: textTheme.subtitle1.copyWith(
@@ -52,8 +55,7 @@ class _CoursePageState extends ModularState<CoursePage, CourseController> {
                   Text("Cursos", style: textTheme.headline6),
                   Text(
                     "Ver todos",
-                    style: textTheme.subtitle1
-                        .copyWith(color: colorScheme.primary),
+                    style: textTheme.subtitle1.copyWith(color: colorScheme.primary),
                   ),
                 ],
               ),
@@ -71,8 +73,7 @@ class _CoursePageState extends ModularState<CoursePage, CourseController> {
                     final Courses _courses = controller.courses[index];
                     return GestureDetector(
                       onTap: () {
-                        Navigator.of(context)
-                            .pushNamed("/details", arguments: _courses);
+                        Navigator.of(context).pushNamed("/details", arguments: _courses);
                       },
                       child: Container(
                         padding: EdgeInsets.all(15),
@@ -81,8 +82,7 @@ class _CoursePageState extends ModularState<CoursePage, CourseController> {
                           color: _courses.colour,
                           image: DecorationImage(
                             alignment: Alignment.bottomCenter,
-                            image: AssetImage(
-                                'assets/images/' + _courses.slug + '.png'),
+                            image: AssetImage('assets/images/' + _courses.slug + '.png'),
                             fit: BoxFit.fitWidth,
                           ),
                         ),
@@ -91,13 +91,15 @@ class _CoursePageState extends ModularState<CoursePage, CourseController> {
                           children: <Widget>[
                             Text(
                               _courses.title,
-                              style: textTheme.subtitle1
-                                  .copyWith(color: Colors.white),
+                              style: textTheme.subtitle1.copyWith(
+                                color: lightColor,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                             Text(
                               '${_courses.modules} Modulos',
                               style: TextStyle(
-                                color: Colors.white.withOpacity(.5),
+                                color: lightColor.withOpacity(.5),
                               ),
                             )
                           ],

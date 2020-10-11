@@ -3,6 +3,12 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 class LineReportChart extends StatelessWidget {
+  final Color color;
+  const LineReportChart({
+    Key key,
+    this.color,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
@@ -18,7 +24,7 @@ class LineReportChart extends StatelessWidget {
               isCurved: true,
               dotData: FlDotData(show: false),
               belowBarData: BarAreaData(show: false),
-              colors: [Color(0xFF0D8E53)],
+              colors: [color],
               barWidth: 4,
             ),
           ],
