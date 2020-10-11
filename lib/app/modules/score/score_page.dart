@@ -55,7 +55,7 @@ class _ScorePageState extends ModularState<ScorePage, ScoreController> {
                     child: Column(
                       children: <Widget>[
                         Container(
-                          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 25),
+                          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                           decoration: BoxDecoration(
                             color: Colors.white.withOpacity(.1),
                             borderRadius: BorderRadius.circular(20),

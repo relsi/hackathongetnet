@@ -137,15 +137,19 @@ class _CourseDetailsState extends State<CourseDetails> {
                                       fontSize: 14,
                                     ),
                                   ),
-                                  trailing: Container(
-                                    //margin: EdgeInsets.only(left: 20),
-                                    height: 40,
-                                    width: 40,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      color: colorScheme.primary.withOpacity(_lesson.completed ? 1 : .5),
+                                  trailing: GestureDetector(
+                                    onTap: () {
+                                      Navigator.of(context).pushNamed("/video", arguments: _lesson);
+                                    },
+                                    child: Container(
+                                      height: 40,
+                                      width: 40,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: colorScheme.primary.withOpacity(_lesson.completed ? 1 : .5),
+                                      ),
+                                      child: Icon(Icons.play_arrow, color: Colors.white),
                                     ),
-                                    child: Icon(Icons.play_arrow, color: Colors.white),
                                   ),
                                 );
                               },
