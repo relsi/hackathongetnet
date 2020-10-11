@@ -5,29 +5,29 @@ import 'package:flutter_svg/flutter_svg.dart';
 class InfoCard extends StatelessWidget {
   final String title;
   final int effectedNum;
-  final String iconImage;
+  final IconData icon;
   final Color iconColor;
   final Function press;
   const InfoCard({
     Key key,
     this.title,
     this.effectedNum,
-    this.iconImage,
+    this.icon,
     this.iconColor,
     this.press,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
     return LayoutBuilder(
       builder: (context, constraints) {
         return GestureDetector(
           onTap: press,
           child: Container(
             width: constraints.maxWidth / 2 - 10,
-            // Here constraints.maxWidth provide us the available width for the widget
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(.1),
+              color: colorScheme.onBackground,
               borderRadius: BorderRadius.circular(8),
             ),
             child: SingleChildScrollView(
@@ -40,10 +40,9 @@ class InfoCard extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
-                          // wrapped within an expanded widget to allow for small density device
                           Container(
                             alignment: Alignment.center,
                             height: 30,
@@ -52,18 +51,19 @@ class InfoCard extends StatelessWidget {
                               color: iconColor.withOpacity(0.12),
                               shape: BoxShape.circle,
                             ),
-                            child: SvgPicture.asset(
-                              "assets/icons/" + iconImage + ".svg",
-                              height: 12,
-                              width: 12,
+                            child: Icon(
+                              icon,
                               color: iconColor,
+                              size: 16,
                             ),
                           ),
-                          SizedBox(width: 15),
-                          Text(
-                            title,
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
+                          SizedBox(width: 10),
+                          Expanded(
+                            child: Text(
+                              title,
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                            ),
                           )
                         ],
                       ),
@@ -74,32 +74,28 @@ class InfoCard extends StatelessWidget {
                         children: <Widget>[
                           Padding(
                             padding: const EdgeInsets.all(10.0),
-                            child: RichText(
-                              text: TextSpan(
-                                style: TextStyle(color: Color(0xFF0D8E53)),
-                                children: [
-                                  TextSpan(
-                                    text: "$effectedNum \n",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .headline6
-                                        .copyWith(
-                                          fontWeight: FontWeight.bold,
-                                        ),
+                            child: Column(
+                              children: [
+                                Text(
+                                  "$effectedNum",
+                                  style: Theme.of(context).textTheme.headline6.copyWith(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                                Text(
+                                  "pontos",
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    height: 1.4,
+                                    color: iconColor,
                                   ),
-                                  TextSpan(
-                                    text: "pontos",
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      height: 1.4,
-                                    ),
-                                  ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ),
+                          SizedBox(width: 10.0),
                           Expanded(
-                            child: LineReportChart(),
+                            child: LineReportChart(color: iconColor),
                           ),
                         ],
                       ),

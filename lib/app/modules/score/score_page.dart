@@ -25,25 +25,24 @@ class _ScorePageState extends ModularState<ScorePage, ScoreController> {
         resizeToAvoidBottomPadding: false,
 //        appBar: buildDetailsAppBar(context),
         body: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 12.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: 10.0),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    CircleAvatar(
-                      backgroundImage: NetworkImage(controller.avatar),
-                    ),
-                  ],
-                ),
+                // Row(
+                //   crossAxisAlignment: CrossAxisAlignment.center,
+                //   mainAxisAlignment: MainAxisAlignment.end,
+                //   children: <Widget>[
+                //     CircleAvatar(
+                //       backgroundImage: NetworkImage(controller.avatar),
+                //     ),
+                //   ],
+                // ),
                 SizedBox(height: 12),
-                Text("Score",
-                    style: textTheme.headline5
-                        .copyWith(fontWeight: FontWeight.w600)),
+                Text("Score", style: textTheme.headline5.copyWith(fontWeight: FontWeight.w600)),
                 Text(
                   "Acompanhe sua pontuação geral",
                   style: textTheme.subtitle1.copyWith(
@@ -51,113 +50,156 @@ class _ScorePageState extends ModularState<ScorePage, ScoreController> {
                   ),
                 ),
                 SizedBox(height: 20.0),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 5),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: <Widget>[
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 20,
-                            vertical: 25,
-                          ),
-                          decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(.1),
-                            borderRadius: BorderRadius.circular(20),
-                            boxShadow: [
-                              BoxShadow(
-                                offset: Offset(0, 21),
-                                blurRadius: 53,
-                                color: Colors.black.withOpacity(0.05),
+                Column(
+                  children: <Widget>[
+                    Container(
+                      padding: EdgeInsets.all(0),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Column(
+                        children: <Widget>[
+                          Wrap(
+                            runSpacing: 20,
+                            spacing: 20,
+                            children: <Widget>[
+                              InfoCard(
+                                title: "Conhecimento de Mercado",
+                                iconColor: Color(0xFF5856D6),
+                                effectedNum: 1062,
+                                icon: Icons.search,
+                                press: () {},
+                              ),
+                              InfoCard(
+                                title: "Gestão Financeira",
+                                iconColor: Color(0xFFFF2D55),
+                                icon: Icons.pie_chart,
+                                effectedNum: 75,
+                                press: () {},
+                              ),
+                              InfoCard(
+                                title: "Gestão Operacional",
+                                iconColor: Color(0xFF50E3C2),
+                                icon: Icons.store,
+                                effectedNum: 689,
+                                press: () {},
+                              ),
+                              InfoCard(
+                                title: "Gestão de Marketing",
+                                iconColor: Color(0xFFFF8C00),
+                                icon: Icons.people,
+                                effectedNum: 75,
+                                press: () {},
                               ),
                             ],
                           ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 20.0),
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 25,
+                      ),
+                      decoration: BoxDecoration(
+                        color: colorScheme.onBackground,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              buildTitleWithMoreIcon(),
-                              buildCaseNumber(context),
                               Text(
-                                "Quase lá, continue progredindo",
+                                "Pontuação",
                                 style: TextStyle(
-                                  fontWeight: FontWeight.w200,
-                                  color: Colors.white,
-                                  fontSize: 16,
+                                  color: colorScheme.onSurface,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 15,
                                 ),
                               ),
-                              SizedBox(height: 15),
-                              WeeklyChart(),
-                              SizedBox(height: 15),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: <Widget>[
-                                  buildInfoTextWithPercentage(
-                                    percentage: "6.43",
-                                    title: "Progresso na última semana",
-                                  ),
-                                ],
+                              Icon(
+                                Icons.more_horiz,
+                                color: colorScheme.onSurface.withOpacity(0.5),
                               )
                             ],
                           ),
-                        ),
-                        SizedBox(height: 20),
-                        Container(
-                          padding: EdgeInsets.all(0),
-                          decoration: BoxDecoration(
-//                            color: Colors.white.withOpacity(.1),
-                            borderRadius: BorderRadius.circular(20),
-                            boxShadow: [
-                              BoxShadow(
-                                offset: Offset(0, 21),
-                                blurRadius: 54,
-                                color: Colors.black.withOpacity(0.05),
+                          Row(
+                            children: <Widget>[
+                              Text(
+                                "547",
+                                style: Theme.of(context).textTheme.headline2.copyWith(color: Color(0xFF3FDFAE), height: 1.2),
                               ),
+                              Text(
+                                "51.9%",
+                                style: TextStyle(color: colorScheme.onSurface.withOpacity(0.5)),
+                              ),
+                              //Icon(Icons.thumb_up)
                             ],
                           ),
-                          child: Column(
+                          Text(
+                            "Quase lá, continue progredindo",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w300,
+                              color: colorScheme.onSurface.withOpacity(0.8),
+                              fontSize: 16,
+                            ),
+                          ),
+                          SizedBox(height: 15),
+                          WeeklyChart(),
+                          SizedBox(height: 10),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              Wrap(
-                                runSpacing: 20,
-                                spacing: 20,
-                                children: <Widget>[
-                                  InfoCard(
-                                    title: "Conhecimento \nde Mercado",
-                                    iconColor: Color(0xFF5856D6),
-                                    effectedNum: 1062,
-                                    iconImage: "map",
-                                    press: () {},
+                              Column(
+                                //mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "6.43",
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      color: colorScheme.onSurface.withOpacity(0.8),
+                                    ),
                                   ),
-                                  InfoCard(
-                                    title: "Gestão \nFinanceira",
-                                    iconColor: Color(0xFFFF2D55),
-                                    iconImage: "running",
-                                    effectedNum: 75,
-                                    press: () {},
-                                  ),
-                                  InfoCard(
-                                    title: "Gestão \nOperacional",
-                                    iconColor: Color(0xFF50E3C2),
-                                    iconImage: "person",
-                                    effectedNum: 689,
-                                    press: () {},
-                                  ),
-                                  InfoCard(
-                                    title: "Gestão \nde Marketing",
-                                    iconColor: Color(0xFFFF8C00),
-                                    iconImage: "search",
-                                    effectedNum: 75,
-                                    press: () {},
+                                  Text(
+                                    "Progresso na última semana",
+                                    style: TextStyle(
+                                      color: colorScheme.onSurface.withOpacity(0.5),
+                                      height: 1.5,
+                                    ),
                                   ),
                                 ],
-                              ),
+                              )
+                              // RichText(
+                              //   text: TextSpan(
+                              //     children: [
+                              // TextSpan(
+                              //   text: "6.43",
+                              //   style: TextStyle(
+                              //     fontSize: 20,
+                              //     color: Colors.deepOrangeAccent,
+                              //   ),
+                              // ),
+                              // TextSpan(
+                              //   text: "Progresso na última semana",
+                              //   style: TextStyle(
+                              //     color: Colors.deepOrangeAccent.withOpacity(.6),
+                              //     height: 1.5,
+                              //   ),
+                              // ),
+                              //     ],
+                              //   ),
+                              // )
                             ],
-                          ),
-                        ),
-                        SizedBox(height: 30.0),
-                      ],
+                          )
+                        ],
+                      ),
                     ),
-                  ),
+                    SizedBox(height: 20),
+                  ],
                 ),
               ],
             ),
@@ -167,84 +209,3 @@ class _ScorePageState extends ModularState<ScorePage, ScoreController> {
     );
   }
 }
-
-RichText buildInfoTextWithPercentage({String title, String percentage}) {
-  return RichText(
-    text: TextSpan(
-      children: [
-        TextSpan(
-          text: "$percentage% \n",
-          style: TextStyle(
-            fontSize: 20,
-            color: Colors.deepOrangeAccent,
-          ),
-        ),
-        TextSpan(
-          text: title,
-          style: TextStyle(
-            color: Colors.deepOrangeAccent.withOpacity(.6),
-            height: 1.5,
-          ),
-        ),
-      ],
-    ),
-  );
-}
-
-Row buildCaseNumber(BuildContext context) {
-  return Row(
-    children: <Widget>[
-      Text(
-        "547 ",
-        style: Theme.of(context)
-            .textTheme
-            .headline2
-            .copyWith(color: Colors.green, height: 1.2),
-      ),
-      Text(
-        "51.9% ",
-        style: TextStyle(color: Colors.white30),
-      ),
-      SvgPicture.asset("assets/icons/increase.svg")
-    ],
-  );
-}
-
-Row buildTitleWithMoreIcon() {
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    children: <Widget>[
-      Text(
-        "Pontuação",
-        style: TextStyle(
-          color: Colors.grey,
-          fontWeight: FontWeight.w600,
-          fontSize: 15,
-        ),
-      ),
-      SvgPicture.asset("assets/icons/more.svg")
-    ],
-  );
-}
-
-//    AppBar buildDetailsAppBar(BuildContext context) {
-//      return AppBar(
-//        backgroundColor: Colors.red,
-//        elevation: 0,
-//        leading: IconButton(
-//          icon: Icon(
-//            Icons.arrow_back_ios,
-//            color: Colors.red,
-//          ),
-//          onPressed: () {
-//            Navigator.pop(context);
-//          },
-//        ),
-//        actions: <Widget>[
-//          IconButton(
-//            icon: SvgPicture.asset("assets/icons/search.svg"),
-//            onPressed: () {},
-//          ),
-//        ],
-//      );
-//    }

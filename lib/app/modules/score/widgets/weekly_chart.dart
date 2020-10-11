@@ -6,12 +6,14 @@ class WeeklyChart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
-    final textTheme = Theme.of(context).textTheme;
     return AspectRatio(
       aspectRatio: 1.7,
       child: BarChart(
         BarChartData(
-          barGroups: getBarGroups(color: colorScheme.secondary, disabledColor: colorScheme.onPrimary.withOpacity(0.5)),
+          barGroups: getBarGroups(
+            color: Color(0xFF3FDFAE),
+            disabledColor: colorScheme.onPrimary.withOpacity(0.1),
+          ),
           borderData: FlBorderData(show: false),
           titlesData: FlTitlesData(
             leftTitles: SideTitles(
@@ -43,7 +45,6 @@ getBarGroups({Color color, Color disabledColor}) {
             barRods: [
               BarChartRodData(
                 y: value,
-                //This is not the proper way, this is just for demo
                 color: i == 4 ? color : disabledColor,
                 width: 16,
               )
