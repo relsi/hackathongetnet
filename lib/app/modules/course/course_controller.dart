@@ -24,7 +24,7 @@ abstract class _CourseControllerBase with Store {
       lessons: [
         Lesson(
           title: "Introdução",
-          subtitle: "",
+          subtitle: "Introdução sobre conhecimento de mercado",
           duration: "1:24 min",
           video: "https://youtu.be/W7Suz32G88U",
           completed: true,
@@ -102,7 +102,7 @@ abstract class _CourseControllerBase with Store {
       subtitle:
           "Gestão operacional é uma atividades chave de qualquer empreendimento, pois é através dela que temos o controle de todos as operações desenvolvidas no negócio. Vamos aprender nessa trilha como construir uma gestão operacional sólida para o seu negócio..",
       slug: "gestao_operacional",
-      colour: Color(0xFFc1e2aa),
+      colour: Color(0xFF3FDFAE),
       modules: 10,
       lessons: [
         Lesson(

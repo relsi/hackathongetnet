@@ -78,7 +78,7 @@ class _VideoPageState extends State<VideoPage> {
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),

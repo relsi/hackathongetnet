@@ -18,6 +18,7 @@ class _CoursePageState extends ModularState<CoursePage, CourseController> {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
+    final lightColor = Color(0xFF111727);
     return SafeArea(
       child: Scaffold(
         body: Padding(
@@ -90,12 +91,15 @@ class _CoursePageState extends ModularState<CoursePage, CourseController> {
                           children: <Widget>[
                             Text(
                               _courses.title,
-                              style: textTheme.subtitle1.copyWith(color: Colors.white),
+                              style: textTheme.subtitle1.copyWith(
+                                color: lightColor,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                             Text(
                               '${_courses.modules} Modulos',
                               style: TextStyle(
-                                color: Colors.white.withOpacity(.5),
+                                color: lightColor.withOpacity(.5),
                               ),
                             )
                           ],

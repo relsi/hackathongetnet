@@ -15,6 +15,7 @@ class _CourseDetailsState extends State<CourseDetails> {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
+    final lightColor = Color(0xFF111727);
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -37,14 +38,14 @@ class _CourseDetailsState extends State<CourseDetails> {
                         },
                         child: Icon(
                           Icons.arrow_back,
-                          color: Colors.white,
+                          color: lightColor,
                         ),
                       ),
                       GestureDetector(
                         onTap: () {},
                         child: Icon(
                           Icons.more_vert,
-                          color: Colors.white,
+                          color: lightColor,
                         ),
                       ),
                     ],
@@ -52,33 +53,33 @@ class _CourseDetailsState extends State<CourseDetails> {
                   SizedBox(height: 24),
                   Text(
                     widget.course.title,
-                    style: textTheme.headline5.copyWith(color: Colors.white, fontWeight: FontWeight.bold, height: 1),
+                    style: textTheme.headline5.copyWith(color: lightColor, fontWeight: FontWeight.bold, height: 1),
                   ),
                   SizedBox(height: 5.0),
                   Text(
                     widget.course.subtitle,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 4,
-                    style: textTheme.subtitle1.copyWith(color: Colors.white.withOpacity(0.8)),
+                    style: textTheme.subtitle1.copyWith(color: lightColor.withOpacity(0.5)),
                   ),
                   SizedBox(height: 10),
                   Row(
                     children: <Widget>[
                       Icon(
                         Icons.people,
-                        color: Colors.white,
+                        color: lightColor.withOpacity(0.5),
                       ),
                       SizedBox(width: 5),
                       Text(
                         "18K",
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: lightColor.withOpacity(0.5)),
                       ),
                       SizedBox(width: 20),
-                      Icon(Icons.play_arrow, color: Colors.white),
+                      Icon(Icons.play_arrow, color: lightColor.withOpacity(0.5)),
                       SizedBox(width: 5),
                       Text(
                         "4.8",
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: lightColor.withOpacity(0.5)),
                       )
                     ],
                   ),
