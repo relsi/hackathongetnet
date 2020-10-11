@@ -55,7 +55,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {
-                      Modular.link.pushNamed('/details');
+                      Modular.link.pushNamed(categories[index].page);
                     },
                     child: Container(
                       padding: EdgeInsets.all(20),

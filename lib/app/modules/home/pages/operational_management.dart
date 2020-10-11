@@ -5,16 +5,16 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../shared/utils/constants.dart';
 import '../home_controller.dart';
 
-class DetailsPage extends StatefulWidget {
-  const DetailsPage({Key key}) : super(key: key);
+class OperationalManagementPage extends StatefulWidget {
+  const OperationalManagementPage({Key key}) : super(key: key);
 
   @override
-  _DetailsPageState createState() => _DetailsPageState();
+  _OperationalManagementPageState createState() =>
+      _OperationalManagementPageState();
 }
 
-class _DetailsPageState extends ModularState<DetailsPage, HomeController> {
-  //use 'controller' variable to access controller
-
+class _OperationalManagementPageState
+    extends ModularState<OperationalManagementPage, HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,8 +46,10 @@ class _DetailsPageState extends ModularState<DetailsPage, HomeController> {
                     ],
                   ),
                   SizedBox(height: 24),
-                  Text("Conhecimento de Mercado", style: kHeadingextStyle),
-                  Text("Subtítulo do curso", style: kSubtitleTextSyule),
+                  Text("Gestão Operacional", style: kHeadingextStyle),
+                  Text(
+                      "Gestão operacional é uma atividades chave de qualquer empreendimento, pois é através dela que temos o controle de todos as operações desenvolvidas no negócio. Vamos aprender nessa trilha como construir uma gestão operacional sólida para o seu negócio..",
+                      style: kSubtitleTextSyule),
                   SizedBox(height: 5),
                   Row(
                     children: <Widget>[
@@ -95,29 +97,29 @@ class _DetailsPageState extends ModularState<DetailsPage, HomeController> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text("Conteúdo do curso", style: kTitleTextStyle),
+                            Text("Conteúdo", style: kTitleTextStyle),
                             SizedBox(height: 30),
                             CourseContent(
                               number: "01",
                               duration: 5.35,
-                              title: "Módulo 1 - Introducao",
+                              title: "Módulo 1 - Introdução",
                               isDone: true,
                             ),
                             CourseContent(
                               number: '02',
                               duration: 19.04,
-                              title: "Módulo 2 - Sebrae",
+                              title: "Módulo 2 - Análise de Mercado",
                               isDone: true,
                             ),
                             CourseContent(
                               number: '03',
                               duration: 15.35,
-                              title: "Módulo 3 - Mercado Financeiro ",
+                              title: "Módulo 3 - Análise de Cenários ",
                             ),
                             CourseContent(
                               number: '04',
                               duration: 5.35,
-                              title: "Módulo 4 - final",
+                              title: "Módulo 4 - Análise Estratégica",
                             ),
                           ],
                         ),
