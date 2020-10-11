@@ -25,83 +25,83 @@ class _ScorePageState extends ModularState<ScorePage, ScoreController> {
 //        appBar: buildDetailsAppBar(context),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 12.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: 10.0),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
-                  CircleAvatar(
-                    backgroundImage: NetworkImage(controller.avatar),
-                  ),
-                ],
-              ),
-              SizedBox(height: 12),
-              Text("Score",
-                  style: textTheme.headline5
-                      .copyWith(fontWeight: FontWeight.w600)),
-              Text(
-                "Acompanhe sua pontuação geral",
-                style: textTheme.subtitle1.copyWith(
-                  color: colorScheme.onPrimary.withOpacity(0.5),
+          child: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 10.0),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    CircleAvatar(
+                      backgroundImage: NetworkImage(controller.avatar),
+                    ),
+                  ],
                 ),
-              ),
-              SizedBox(height: 20.0),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 5),
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: <Widget>[
-                      Container(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 20, vertical: 25),
-                        decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(.1),
-                          borderRadius: BorderRadius.circular(20),
-                          boxShadow: [
-                            BoxShadow(
-                              offset: Offset(0, 21),
-                              blurRadius: 53,
-                              color: Colors.black.withOpacity(0.05),
-                            ),
-                          ],
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            buildTitleWithMoreIcon(),
-                            buildCaseNumber(context),
-                            Text(
-                              "Quase lá, continue progredindo",
-                              style: TextStyle(
-                                fontWeight: FontWeight.w200,
-                                color: Colors.white,
-                                fontSize: 16,
+                SizedBox(height: 12),
+                Text("Score", style: textTheme.headline5.copyWith(fontWeight: FontWeight.w600)),
+                Text(
+                  "Acompanhe sua pontuação geral",
+                  style: textTheme.subtitle1.copyWith(
+                    color: colorScheme.onPrimary.withOpacity(0.5),
+                  ),
+                ),
+                SizedBox(height: 20.0),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 25),
+                          decoration: BoxDecoration(
+                            color: Colors.white.withOpacity(.1),
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow: [
+                              BoxShadow(
+                                offset: Offset(0, 21),
+                                blurRadius: 53,
+                                color: Colors.black.withOpacity(0.05),
                               ),
-                            ),
-                            SizedBox(height: 15),
-                            WeeklyChart(),
-                            SizedBox(height: 15),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: <Widget>[
-                                buildInfoTextWithPercentage(
-                                  percentage: "6.43",
-                                  title: "Progresso na última semana",
+                            ],
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              buildTitleWithMoreIcon(),
+                              buildCaseNumber(context),
+                              Text(
+                                "Quase lá, continue progredindo",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w200,
+                                  color: Colors.white,
+                                  fontSize: 16,
                                 ),
-                              ],
-                            )
-                          ],
+                              ),
+                              SizedBox(height: 15),
+                              WeeklyChart(),
+                              SizedBox(height: 15),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  buildInfoTextWithPercentage(
+                                    percentage: "6.43",
+                                    title: "Progresso na última semana",
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 20),
-                    ],
+                        SizedBox(height: 20),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
@@ -137,10 +137,7 @@ Row buildCaseNumber(BuildContext context) {
     children: <Widget>[
       Text(
         "547 ",
-        style: Theme.of(context)
-            .textTheme
-            .headline2
-            .copyWith(color: Colors.green, height: 1.2),
+        style: Theme.of(context).textTheme.headline2.copyWith(color: Colors.green, height: 1.2),
       ),
       Text(
         "51.9% ",
