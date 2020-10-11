@@ -25,17 +25,7 @@ class _BusinessPageState
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                SizedBox(height: 10.0),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    CircleAvatar(
-                      backgroundImage: NetworkImage(controller.avatar),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 12),
+                SizedBox(height: 40.0),
                 Text("Seu Negócio",
                     style: textTheme.headline5
                         .copyWith(fontWeight: FontWeight.w600)),
