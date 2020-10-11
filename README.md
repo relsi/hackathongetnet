@@ -11,8 +11,8 @@ Para a construção do protótipo estamos utilizando o framework **Flutter** do 
 
 ## Participantes
 
-[Luciano](https://github.com/luciano-work) - Desenvolvimento
-Marcelo - Negócios
-[Rafael](https://github.com/bertrandrafael) - Desenvolvimento
-[Relsi](https://github.com/relsi) - Desenvolvimento
-[Vagner](https://github.com/vameri) - UX
+ - [Luciano](https://github.com/luciano-work) - Desenvolvimento
+ - Marcelo - Negócios
+ - [Rafael](https://github.com/webtopia) - Desenvolvimento
+ - [Relsi](https://github.com/relsi) - Desenvolvimento
+ - [Vagner](https://github.com/vameri) - UX
