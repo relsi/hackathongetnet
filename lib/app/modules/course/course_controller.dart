@@ -19,7 +19,7 @@ abstract class _CourseControllerBase with Store {
       title: "Conhecimento de Mercado",
       subtitle: "Nessa trilha você vai aprender a fazer análises, criar planos de negócios, e conhecer as ferramentas essenciais para o sucesso de qualquer empreendimento.",
       slug: "empreendedorismo",
-      colour: Color(0xFFbed1f7),
+      colour: Color(0xFF8568ff),
       modules: 5,
       lessons: [
         Lesson(
@@ -57,7 +57,7 @@ abstract class _CourseControllerBase with Store {
       title: "Gestão Financeira",
       subtitle: "Nessa trilha você irá aprender como fazer a gestão financeira de seu negócio de forma correta e poderá usar esse conhecimento para melhorar a saúde finaceira do seu negócio.",
       slug: "gestao_financeira",
-      colour: Color(0xFFe7c0c0),
+      colour: Color(0xFFff8383),
       modules: 10,
       lessons: [
         Lesson(
@@ -135,7 +135,7 @@ abstract class _CourseControllerBase with Store {
       subtitle:
           "Gestão de marketing é é um fator crucial para o sucesso de qualquer empreendimento, pois é através dela que podemos alcançar os resultados desejados. Você aprenderá nessa trilha a criar e gerir campanhas de marketing para alavancar seus negócios.",
       slug: "gestao_marketing",
-      colour: Color(0xFFf2d899),
+      colour: Color(0xFFeec35e),
       modules: 15,
       lessons: [
         Lesson(
