@@ -44,10 +44,12 @@ class _ScorePageState extends ModularState<ScorePage, ScoreController> {
                 Text("Score",
                     style: textTheme.headline5
                         .copyWith(fontWeight: FontWeight.w600)),
+                SizedBox(height: 4),
                 Text(
                   "Acompanhe sua pontuação geral",
                   style: textTheme.subtitle1.copyWith(
                     color: colorScheme.onPrimary.withOpacity(0.5),
+                    height: 1.4,
                   ),
                 ),
                 SizedBox(height: 20.0),

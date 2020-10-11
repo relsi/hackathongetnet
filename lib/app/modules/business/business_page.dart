@@ -25,18 +25,34 @@ class _BusinessPageState
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                SizedBox(height: 15.0),
+                SizedBox(height: 10.0),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    CircleAvatar(
+                      backgroundImage: NetworkImage(controller.avatar),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 12),
                 Text("Seu Negócio",
                     style: textTheme.headline5
                         .copyWith(fontWeight: FontWeight.w600)),
-                SizedBox(height: 15.0),
+                SizedBox(height: 4),
                 Text(
                   "Esses são os dados do seu negócio. Clique no botão Alterar Dados para alterar as informações necessárias",
                   style: textTheme.subtitle1.copyWith(
                     color: colorScheme.onPrimary.withOpacity(0.5),
+                    height: 1.4,
                   ),
                 ),
-                SizedBox(height: 25.0),
+                SizedBox(height: 10.0),
+                Divider(
+                  thickness: 1,
+                  height: 10.0,
+                ),
+                SizedBox(height: 10.0),
                 Text("Razão Social:",
                     style: textTheme.headline6
                         .copyWith(fontWeight: FontWeight.w300)),
@@ -86,15 +102,18 @@ class _BusinessPageState
                     color: colorScheme.onPrimary.withOpacity(0.5),
                   ),
                 ),
-                SizedBox(height: 35.0),
+                SizedBox(height: 25.0),
                 FlatButton(
                   color: Colors.red,
                   textColor: Colors.white,
-                  padding: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.symmetric(
+                    vertical: 10.0,
+                    horizontal: 20.0,
+                  ),
                   onPressed: () {},
                   child: Text(
                     "Alterar Dados",
-                    style: TextStyle(fontSize: 20.0),
+                    style: TextStyle(fontSize: 16.0),
                   ),
                 )
               ])),
