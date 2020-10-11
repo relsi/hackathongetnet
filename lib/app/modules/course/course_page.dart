@@ -28,12 +28,12 @@ class _CoursePageState extends ModularState<CoursePage, CourseController> {
               SizedBox(height: 10.0),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
-                  Icon(
-                    Icons.menu,
-                    color: colorScheme.onPrimary,
-                  ),
+//                  Icon(
+//                    Icons.menu,
+//                    color: colorScheme.onPrimary,
+//                  ),
                   CircleAvatar(
                     backgroundImage: NetworkImage(controller.avatar),
                   ),

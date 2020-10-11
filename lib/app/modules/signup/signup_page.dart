@@ -76,7 +76,7 @@ class _SignupPageState extends ModularState<SignupPage, SignupController> {
                   onChanged: (value) {},
                 ),
                 RoundedButton(
-                  text: "SIGNUP",
+                  text: "CADASTRE-SE",
                   press: () {},
                 ),
                 SizedBox(height: size.height * 0.03),
