@@ -47,6 +47,7 @@ class _ScorePageState extends ModularState<ScorePage, ScoreController> {
                   "Acompanhe sua pontuação geral",
                   style: textTheme.subtitle1.copyWith(
                     color: colorScheme.onPrimary.withOpacity(0.5),
+                    height: 1.4,
                   ),
                 ),
                 SizedBox(height: 20.0),
