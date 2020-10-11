@@ -19,13 +19,13 @@ class RoundedButton extends StatelessWidget {
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
+      margin: EdgeInsets.symmetric(vertical: 5),
       width: size.width * 0.8,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(29),
         child: FlatButton(
           padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
-          color: colorScheme.primary,
+          color: color,
           onPressed: press,
           child: Text(
             text,

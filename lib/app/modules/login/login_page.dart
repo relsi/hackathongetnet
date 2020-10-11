@@ -77,9 +77,8 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                   ),
                   RoundedButton(
                     text: "LOGIN",
+                    color: colorScheme.primary,
                     press: () {
-                      //Modular.to.pushNamed('/home');
-                      //Navigator.of(context).pushNamed("/home");
                       Navigator.pushNamed(context, '/home');
                     },
                   ),

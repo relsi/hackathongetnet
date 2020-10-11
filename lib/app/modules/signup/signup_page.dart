@@ -29,24 +29,6 @@ class _SignupPageState extends ModularState<SignupPage, SignupController> {
       child: Stack(
         alignment: Alignment.center,
         children: <Widget>[
-          // Positioned(
-          //   top: 0,
-          //   left: 0,
-          //   // Todo: Alterar o placeholder para Image.asset com height: size.height * 0.35,
-          //   child: Placeholder(
-          //     color: Colors.yellow,
-          //     fallbackWidth: size.height * 0.35,
-          //   ),
-          // ),
-          // Positioned(
-          //   bottom: 0,
-          //   left: 0,
-          //   // Todo: Alterar o placeholder para Image.asset com height: size.height * 0.25,
-          //   child: Placeholder(
-          //     color: Colors.red,
-          //     fallbackWidth: size.height * 0.25,
-          //   ),
-          // ),
           SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -77,6 +59,7 @@ class _SignupPageState extends ModularState<SignupPage, SignupController> {
                 ),
                 RoundedButton(
                   text: "CADASTRE-SE",
+                  color: colorScheme.primary,
                   press: () {},
                 ),
                 SizedBox(height: size.height * 0.03),
@@ -86,30 +69,6 @@ class _SignupPageState extends ModularState<SignupPage, SignupController> {
                     Modular.to.pop();
                   },
                 ),
-                //OrDivider(),
-                // Row(
-                //   mainAxisAlignment: MainAxisAlignment.center,
-                //   children: <Widget>[
-                //     // Todo: Alterar o placeholder para classe SocialIcon do facebook
-                //     Placeholder(
-                //       color: Colors.green,
-                //       fallbackHeight: 40.0,
-                //       fallbackWidth: 40.0,
-                //     ),
-                //     // Todo: Alterar o placeholder para classe SocialIcon do twitter
-                //     Placeholder(
-                //       color: Colors.purple,
-                //       fallbackHeight: 40.0,
-                //       fallbackWidth: 40.0,
-                //     ),
-                //     // Todo: Alterar o placeholder para classe SocialIcon do google-plus
-                //     Placeholder(
-                //       color: Colors.orange,
-                //       fallbackHeight: 40.0,
-                //       fallbackWidth: 40.0,
-                //     ),
-                //   ],
-                // )
               ],
             ),
           ),

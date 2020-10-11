@@ -18,9 +18,10 @@ class _CoursePageState extends ModularState<CoursePage, CourseController> {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
-    final lightColor = Color(0xFF111727);
+    final lightColor = Colors.white; //Color(0xFF111727);
     return SafeArea(
       child: Scaffold(
+        backgroundColor: colorScheme.onBackground,
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 12.0),
           child: Column(

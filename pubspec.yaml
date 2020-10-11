@@ -35,6 +35,7 @@ environment:
 dependencies:
   #HTTP REQUEST
   dio: ^3.0.10
+  #STATE MANAGEMENT
   flutter_mobx: ^1.1.0+2
   mobx: ^1.2.1+3
   flutter_modular: ^2.0.1

@@ -15,7 +15,7 @@ class _CourseDetailsState extends State<CourseDetails> {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
-    final lightColor = Color(0xFF111727);
+    final lightColor = Colors.white; // Color(0xFF111727)
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -60,26 +60,26 @@ class _CourseDetailsState extends State<CourseDetails> {
                     widget.course.subtitle,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 4,
-                    style: textTheme.subtitle1.copyWith(color: lightColor.withOpacity(0.5)),
+                    style: textTheme.subtitle1.copyWith(color: lightColor.withOpacity(0.8)),
                   ),
                   SizedBox(height: 10),
                   Row(
                     children: <Widget>[
                       Icon(
                         Icons.people,
-                        color: lightColor.withOpacity(0.5),
+                        color: lightColor.withOpacity(0.8),
                       ),
                       SizedBox(width: 5),
                       Text(
                         "18K",
-                        style: TextStyle(color: lightColor.withOpacity(0.5)),
+                        style: TextStyle(color: lightColor.withOpacity(0.8)),
                       ),
                       SizedBox(width: 20),
-                      Icon(Icons.play_arrow, color: lightColor.withOpacity(0.5)),
+                      Icon(Icons.play_arrow, color: lightColor.withOpacity(0.8)),
                       SizedBox(width: 5),
                       Text(
                         "4.8",
-                        style: TextStyle(color: lightColor.withOpacity(0.5)),
+                        style: TextStyle(color: lightColor.withOpacity(0.8)),
                       )
                     ],
                   ),
