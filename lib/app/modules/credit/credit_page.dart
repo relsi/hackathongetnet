@@ -26,17 +26,18 @@ class _CreditPageState extends ModularState<CreditPage, CreditController> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                SizedBox(height: 15.0),
+                SizedBox(height: 40.0),
                 Text(
                   "Linhas de Crédito",
                   style:
                       textTheme.headline5.copyWith(fontWeight: FontWeight.w600),
                 ),
-                SizedBox(height: 15.0),
+                SizedBox(height: 4),
                 Text(
                   "Veja as linhas de crédito que temos disponíveis para o seu empreendimento.",
                   style: textTheme.subtitle1.copyWith(
                     color: colorScheme.onPrimary.withOpacity(0.5),
+                    height: 1.4,
                   ),
                 ),
                 SizedBox(height: 25.0),
