@@ -32,7 +32,7 @@ class _VideoPageState extends State<VideoPage> {
                       },
                       child: Icon(
                         Icons.arrow_back,
-                        color: Colors.white,
+                        color: colorScheme.onSecondary,
                       ),
                     ),
                   ],
@@ -40,14 +40,14 @@ class _VideoPageState extends State<VideoPage> {
                 SizedBox(height: 24),
                 Text(
                   widget.lesson.title,
-                  style: textTheme.headline5.copyWith(color: Colors.white, fontWeight: FontWeight.bold, height: 1),
+                  style: textTheme.headline5.copyWith(color: colorScheme.onSecondary, fontWeight: FontWeight.bold, height: 1),
                 ),
                 SizedBox(height: 5.0),
                 Text(
                   widget.lesson.subtitle,
                   overflow: TextOverflow.ellipsis,
                   maxLines: 4,
-                  style: textTheme.subtitle1.copyWith(color: Colors.white.withOpacity(0.8)),
+                  style: textTheme.subtitle1.copyWith(color: colorScheme.onSecondary.withOpacity(0.8)),
                 ),
                 SizedBox(height: 20),
                 Container(
@@ -63,6 +63,19 @@ class _VideoPageState extends State<VideoPage> {
                         color: colorScheme.primary,
                       ),
                       child: Icon(Icons.play_arrow, color: Colors.white),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 20.0,
+                ),
+                Center(
+                  child: FlatButton(
+                    color: colorScheme.secondary,
+                    onPressed: () {},
+                    child: Text(
+                      "FAZER O TESTE",
+                      style: TextStyle(color: Colors.white),
                     ),
                   ),
                 )
