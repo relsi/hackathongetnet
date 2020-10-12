@@ -6,7 +6,6 @@ PlayCred é um aplicativo que visa fornecer linhas de crédito para pequenos e m
 
 Iremos fazer isso através de um sistema de qualificação na área de negócios, utilizando recursos de gamefication e algoritmos de IA que possibilitarão a construção de escores personalizados de acordo com a evolução do empreendedor dentro da plataforma.
 
-
 ## Tecnologias
 
 Para a construção do protótipo estamos utilizando o framework **Flutter** do Google.
@@ -18,3 +17,16 @@ Para a construção do protótipo estamos utilizando o framework **Flutter** do 
  - [Rafael](https://github.com/bertrandrafael) - Desenvolvimento
  - [Relsi](https://github.com/relsi) - Desenvolvimento
  - [Vagner](https://github.com/vameri) - UX
+
+## App screenshot
+
+<p>
+  <img width="320px" alt="App Preview" src="https://github.com/relsi/hackathongetnet/blob/main/screenshot/flutter_01.png?raw=true"/>
+  <img width="320px" alt="App Preview" src="https://github.com/relsi/hackathongetnet/blob/main/screenshot/flutter_02.png?raw=true"/>
+  <img width="320px" alt="App Preview" src="https://github.com/relsi/hackathongetnet/blob/main/screenshot/flutter_03.png?raw=true"/>
+  <img width="320px" alt="App Preview" src="https://github.com/relsi/hackathongetnet/blob/main/screenshot/flutter_04.png?raw=true"/>
+  <img width="320px" alt="App Preview" src="https://github.com/relsi/hackathongetnet/blob/main/screenshot/flutter_05.png?raw=true"/>
+  <img width="320px" alt="App Preview" src="https://github.com/relsi/hackathongetnet/blob/main/screenshot/flutter_06.png?raw=true"/>
+  <img width="320px" alt="App Preview" src="https://github.com/relsi/hackathongetnet/blob/main/screenshot/flutter_07.png?raw=true"/>
+  <img width="320px" alt="App Preview" src="https://github.com/relsi/hackathongetnet/blob/main/screenshot/flutter_09.png?raw=true"/>
+</p>
