@@ -26,17 +26,18 @@ class _CreditPageState extends ModularState<CreditPage, CreditController> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              SizedBox(height: 20),
+              SizedBox(height: 40.0),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                padding: const EdgeInsets.symmetric(horizontal: 12.0),
                 child: Text(
                   "Linhas de Crédito",
-                  style: textTheme.headline5.copyWith(fontWeight: FontWeight.w600),
+                  style:
+                      textTheme.headline5.copyWith(fontWeight: FontWeight.w600),
                 ),
               ),
               SizedBox(height: 4),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                padding: const EdgeInsets.symmetric(horizontal: 12.0),
                 child: Text(
                   "Veja as linhas de crédito que temos disponíveis para o seu empreendimento.",
                   style: textTheme.subtitle1.copyWith(
@@ -55,28 +56,32 @@ class _CreditPageState extends ModularState<CreditPage, CreditController> {
                       title: "PlayCred",
                       icon: Icons.person_add,
                       color: Color(0xFF5856D6),
-                      description: 'Linha de crédito ideal para quem precisa de um aporte para compra de insumos e outros gasto de valores até R\$ 1000,00',
+                      description:
+                          'Linha de crédito ideal para quem precisa de um aporte para compra de insumos e outros gasto de valores até R\$ 1000,00',
                     ),
                     CustomCard(
                       press: () {},
                       title: "Crédito Investimento Fixo",
                       icon: Icons.https,
                       color: Color(0xFFFF2D55),
-                      description: "Essa é uma linha de crédito pra você que deseja expandir ou modernizar o seu negócio",
+                      description:
+                          "Essa é uma linha de crédito pra você que deseja expandir ou modernizar o seu negócio",
                     ),
                     CustomCard(
                       press: () {},
                       title: "Crédito Para Capital de Giro",
                       icon: Icons.update,
                       color: Color(0xFF50E3C2),
-                      description: "Ideal para para auxiliar nas suas obrigações de curto prazo",
+                      description:
+                          "Ideal para para auxiliar nas suas obrigações de curto prazo",
                     ),
                     CustomCard(
                       press: () {},
                       title: "Home Equity",
                       icon: Icons.home,
                       color: Color(0xFFFF8C00),
-                      description: "Linha de crédito para quem precisa de valores mais elevados e tem imóvel para dar como garantia",
+                      description:
+                          "Linha de crédito para quem precisa de valores mais elevados e tem imóvel para dar como garantia",
                     ),
                     SizedBox(width: 20),
                   ],

@@ -123,7 +123,7 @@ class _ScorePageState extends ModularState<ScorePage, ScoreController> {
                           Row(
                             children: <Widget>[
                               Text(
-                                "547",
+                                "1.901",
                                 style: Theme.of(context)
                                     .textTheme
                                     .headline2
@@ -175,26 +175,6 @@ class _ScorePageState extends ModularState<ScorePage, ScoreController> {
                                   ),
                                 ],
                               )
-                              // RichText(
-                              //   text: TextSpan(
-                              //     children: [
-                              // TextSpan(
-                              //   text: "6.43",
-                              //   style: TextStyle(
-                              //     fontSize: 20,
-                              //     color: Colors.deepOrangeAccent,
-                              //   ),
-                              // ),
-                              // TextSpan(
-                              //   text: "Progresso na última semana",
-                              //   style: TextStyle(
-                              //     color: Colors.deepOrangeAccent.withOpacity(.6),
-                              //     height: 1.5,
-                              //   ),
-                              // ),
-                              //     ],
-                              //   ),
-                              // )
                             ],
                           )
                         ],

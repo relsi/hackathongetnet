@@ -10,7 +10,8 @@ class BusinessPage extends StatefulWidget {
   _BusinessPageState createState() => _BusinessPageState();
 }
 
-class _BusinessPageState extends ModularState<BusinessPage, BusinessController> {
+class _BusinessPageState
+    extends ModularState<BusinessPage, BusinessController> {
   //use 'controller' variable to access controller
 
   @override
@@ -26,8 +27,10 @@ class _BusinessPageState extends ModularState<BusinessPage, BusinessController> 
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                SizedBox(height: 20.0),
-                Text("Seu Negócio", style: textTheme.headline5.copyWith(fontWeight: FontWeight.w600)),
+                SizedBox(height: 40.0),
+                Text("Seu Negócio",
+                    style: textTheme.headline5
+                        .copyWith(fontWeight: FontWeight.w600)),
                 SizedBox(height: 4),
                 Text(
                   "Esses são os dados do seu negócio. Clique no botão Alterar Dados para alterar as informações necessárias",
@@ -42,7 +45,9 @@ class _BusinessPageState extends ModularState<BusinessPage, BusinessController> 
                   height: 10.0,
                 ),
                 SizedBox(height: 10.0),
-                Text("Razão Social:", style: textTheme.headline6.copyWith(fontWeight: FontWeight.w300)),
+                Text("Razão Social:",
+                    style: textTheme.headline6
+                        .copyWith(fontWeight: FontWeight.w300)),
                 Text(
                   "Pedro's Burgueria",
                   style: textTheme.subtitle1.copyWith(
@@ -50,7 +55,9 @@ class _BusinessPageState extends ModularState<BusinessPage, BusinessController> 
                   ),
                 ),
                 SizedBox(height: 25.0),
-                Text("Endereço:", style: textTheme.headline6.copyWith(fontWeight: FontWeight.w300)),
+                Text("Endereço:",
+                    style: textTheme.headline6
+                        .copyWith(fontWeight: FontWeight.w300)),
                 Text(
                   "Rua da República, 602",
                   style: textTheme.subtitle1.copyWith(
@@ -58,7 +65,9 @@ class _BusinessPageState extends ModularState<BusinessPage, BusinessController> 
                   ),
                 ),
                 SizedBox(height: 25.0),
-                Text("Telefone:", style: textTheme.headline6.copyWith(fontWeight: FontWeight.w300)),
+                Text("Telefone:",
+                    style: textTheme.headline6
+                        .copyWith(fontWeight: FontWeight.w300)),
                 Text(
                   "(51) 1234-5678",
                   style: textTheme.subtitle1.copyWith(
@@ -66,7 +75,9 @@ class _BusinessPageState extends ModularState<BusinessPage, BusinessController> 
                   ),
                 ),
                 SizedBox(height: 25.0),
-                Text("CNPJ:", style: textTheme.headline6.copyWith(fontWeight: FontWeight.w300)),
+                Text("CNPJ:",
+                    style: textTheme.headline6
+                        .copyWith(fontWeight: FontWeight.w300)),
                 Text(
                   "12.345.678/0001-00",
                   style: textTheme.subtitle1.copyWith(
@@ -74,7 +85,9 @@ class _BusinessPageState extends ModularState<BusinessPage, BusinessController> 
                   ),
                 ),
                 SizedBox(height: 25.0),
-                Text("E-mail:", style: textTheme.headline6.copyWith(fontWeight: FontWeight.w300)),
+                Text("E-mail:",
+                    style: textTheme.headline6
+                        .copyWith(fontWeight: FontWeight.w300)),
                 Text(
                   "pedro@pedrosburguer.com",
                   style: textTheme.subtitle1.copyWith(

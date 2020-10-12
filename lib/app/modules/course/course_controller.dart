@@ -11,13 +11,14 @@ class CourseController = _CourseControllerBase with _$CourseController;
 
 abstract class _CourseControllerBase with Store {
   @observable
-  String avatar = "https://f.i.uol.com.br/fotografia/2019/12/16/15765188985df7c4f298688_1576518898_3x2_md.jpg";
+  String avatar = "avatar.jpg";
 
   @observable
   List<Courses> courses = [
     Courses(
       title: "Conhecimento de Mercado",
-      subtitle: "Nessa trilha você vai aprender a fazer análises, criar planos de negócios, e conhecer as ferramentas essenciais para o sucesso de qualquer empreendimento.",
+      subtitle:
+          "Nessa trilha você vai aprender a fazer análises, criar planos de negócios, e conhecer as ferramentas essenciais para o sucesso de qualquer empreendimento.",
       slug: "empreendedorismo",
       colour: Color(0xFF8568ff),
       modules: 5,
@@ -39,7 +40,8 @@ abstract class _CourseControllerBase with Store {
         ),
         Lesson(
           title: "Como identificar oportunidades",
-          subtitle: "Nessa aula você aprender como identificar oportunidades de mercado e mensurar a viabilidade do negócio",
+          subtitle:
+              "Nessa aula você aprender como identificar oportunidades de mercado e mensurar a viabilidade do negócio",
           duration: "10:28 min",
           video: "https://youtu.be/UPX43X1AX6o",
           completed: false,
@@ -55,7 +57,8 @@ abstract class _CourseControllerBase with Store {
     ),
     Courses(
       title: "Gestão Financeira",
-      subtitle: "Nessa trilha você irá aprender como fazer a gestão financeira de seu negócio de forma correta e poderá usar esse conhecimento para melhorar a saúde finaceira do seu negócio.",
+      subtitle:
+          "Nessa trilha você irá aprender como fazer a gestão financeira de seu negócio de forma correta e poderá usar esse conhecimento para melhorar a saúde finaceira do seu negócio.",
       slug: "gestao_financeira",
       colour: Color(0xFFff8383),
       modules: 10,
@@ -90,7 +93,8 @@ abstract class _CourseControllerBase with Store {
         ),
         Lesson(
           title: "Planejamento Financeiro",
-          subtitle: "Nessa aula você vai aprender a fazer um planejamento finaceiro adequado para o seu negócio para evitar problemas e ter uma ótima saude financeira",
+          subtitle:
+              "Nessa aula você vai aprender a fazer um planejamento finaceiro adequado para o seu negócio para evitar problemas e ter uma ótima saude financeira",
           duration: "4:50 min",
           video: "https://youtu.be/T6GZdqpuEpE",
           completed: true,
@@ -102,12 +106,13 @@ abstract class _CourseControllerBase with Store {
       subtitle:
           "Gestão operacional é uma atividades chave de qualquer empreendimento, pois é através dela que temos o controle de todos as operações desenvolvidas no negócio. Vamos aprender nessa trilha como construir uma gestão operacional sólida para o seu negócio..",
       slug: "gestao_operacional",
-      colour: Color(0xFF3FDFAE),
+      colour: Color(0xFF3acc9e),
       modules: 10,
       lessons: [
         Lesson(
           title: "Plano Operacional",
-          subtitle: "Nessa aula você vai aprender como montar um plano operacional ideal para o seu negócio",
+          subtitle:
+              "Nessa aula você vai aprender como montar um plano operacional ideal para o seu negócio",
           duration: "1:43 min",
           video: "https://youtu.be/zL4OmN8m5X8",
           completed: true,
@@ -154,7 +159,8 @@ abstract class _CourseControllerBase with Store {
         ),
         Lesson(
           title: "Plano de Marketing",
-          subtitle: "Nessa aula você aprender como gerenciar uma camapnha de Marketing e como isso vai ser importante para alavancar o seu negócio",
+          subtitle:
+              "Nessa aula você aprender como gerenciar uma camapnha de Marketing e como isso vai ser importante para alavancar o seu negócio",
           duration: "01:36 min",
           video: "https://youtu.be/JDIiCGJ8j0I",
           completed: true,
