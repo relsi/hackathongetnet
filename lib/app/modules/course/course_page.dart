@@ -37,15 +37,12 @@ class _CoursePageState extends ModularState<CoursePage, CourseController> {
 //                    color: colorScheme.onPrimary,
 //                  ),
                   CircleAvatar(
-                    backgroundImage:
-                        AssetImage('assets/images/' + controller.avatar),
+                    backgroundImage: AssetImage('assets/images/' + controller.avatar),
                   ),
                 ],
               ),
               SizedBox(height: 12),
-              Text("Olá Pedro,",
-                  style: textTheme.headline5
-                      .copyWith(fontWeight: FontWeight.w600)),
+              Text("Olá Pedro,", style: textTheme.headline5.copyWith(fontWeight: FontWeight.w600)),
               Text(
                 "Encontre o curso que deseja aprender",
                 style: textTheme.subtitle1.copyWith(
@@ -59,8 +56,7 @@ class _CoursePageState extends ModularState<CoursePage, CourseController> {
                   Text("Cursos", style: textTheme.headline6),
                   Text(
                     "Ver todos",
-                    style: textTheme.subtitle1
-                        .copyWith(color: colorScheme.primary),
+                    style: textTheme.subtitle1.copyWith(color: colorScheme.primary),
                   ),
                 ],
               ),
@@ -78,8 +74,7 @@ class _CoursePageState extends ModularState<CoursePage, CourseController> {
                     final Courses _courses = controller.courses[index];
                     return GestureDetector(
                       onTap: () {
-                        Navigator.of(context)
-                            .pushNamed("/details", arguments: _courses);
+                        Navigator.of(context).pushNamed("/details", arguments: _courses);
                       },
                       child: Container(
                         padding: EdgeInsets.all(15),
@@ -88,8 +83,7 @@ class _CoursePageState extends ModularState<CoursePage, CourseController> {
                           color: _courses.colour,
                           image: DecorationImage(
                             alignment: Alignment.bottomCenter,
-                            image: AssetImage(
-                                'assets/images/' + _courses.slug + '.png'),
+                            image: AssetImage('assets/images/' + _courses.slug + '.png'),
                             fit: BoxFit.fitWidth,
                           ),
                         ),

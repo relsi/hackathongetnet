@@ -73,6 +73,7 @@ class CustomCard extends StatelessWidget {
                     Text(
                       description,
                       maxLines: 4,
+                      textAlign: TextAlign.center,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         color: colorScheme.onSurface.withOpacity(.65),
@@ -80,7 +81,11 @@ class CustomCard extends StatelessWidget {
                     ),
                     SizedBox(height: 15),
                     FlatButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                      ),
                       color: colorScheme.primary,
+                      textColor: Colors.white,
                       onPressed: () {},
                       child: Text("Saber mais"),
                     )
