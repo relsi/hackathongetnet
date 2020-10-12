@@ -184,9 +184,12 @@ class Panel extends StatelessWidget {
                               width: 40,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: colorScheme.primary.withOpacity(_lesson.completed ? 1 : .5),
+                                color: _lesson.completed ? colorScheme.primary : colorScheme.onPrimary.withOpacity(0.2),
                               ),
-                              child: Icon(Icons.play_arrow, color: Colors.white),
+                              child: Icon(
+                                Icons.play_arrow,
+                                color: _lesson.completed ? Colors.white : colorScheme.onPrimary.withOpacity(0.2),
+                              ),
                             ),
                           ),
                         );

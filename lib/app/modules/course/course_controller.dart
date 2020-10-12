@@ -17,8 +17,7 @@ abstract class _CourseControllerBase with Store {
   List<Courses> courses = [
     Courses(
       title: "Conhecimento de Mercado",
-      subtitle:
-          "Nessa trilha você vai aprender a fazer análises, criar planos de negócios, e conhecer as ferramentas essenciais para o sucesso de qualquer empreendimento.",
+      subtitle: "Nessa trilha você vai aprender a fazer análises, criar planos de negócios, e conhecer as ferramentas essenciais para o sucesso de qualquer empreendimento.",
       slug: "empreendedorismo",
       colour: Color(0xFF8568ff),
       modules: 5,
@@ -40,8 +39,7 @@ abstract class _CourseControllerBase with Store {
         ),
         Lesson(
           title: "Como identificar oportunidades",
-          subtitle:
-              "Nessa aula você aprender como identificar oportunidades de mercado e mensurar a viabilidade do negócio",
+          subtitle: "Nessa aula você aprender como identificar oportunidades de mercado e mensurar a viabilidade do negócio",
           duration: "10:28 min",
           video: "https://youtu.be/UPX43X1AX6o",
           completed: false,
@@ -57,47 +55,45 @@ abstract class _CourseControllerBase with Store {
     ),
     Courses(
       title: "Gestão Financeira",
-      subtitle:
-          "Nessa trilha você irá aprender como fazer a gestão financeira de seu negócio de forma correta e poderá usar esse conhecimento para melhorar a saúde finaceira do seu negócio.",
+      subtitle: "Nessa trilha você irá aprender como fazer a gestão financeira de seu negócio de forma correta e poderá usar esse conhecimento para melhorar a saúde finaceira do seu negócio.",
       slug: "gestao_financeira",
       colour: Color(0xFFff8383),
       modules: 10,
       lessons: [
         Lesson(
           title: "Como Definir os Custos",
-          subtitle: "",
+          subtitle: "Nessa aula você irá aprender como fazer como Definir os Custos",
           duration: "2:34 min",
           video: "https://youtu.be/M47WmUFOiq4",
           completed: true,
         ),
         Lesson(
           title: "Como organizar suas finanças",
-          subtitle: "",
+          subtitle: "Nessa aula você irá aprender como fazer como organizar suas finanças",
           duration: "1:19:24 min",
           video: "https://youtu.be/g4bK6aZF8ps",
           completed: true,
         ),
         Lesson(
           title: "Gestão do capital de giro",
-          subtitle: "",
+          subtitle: "Nessa aula você irá aprender como fazer como fazer a gestão do capital de giro",
           duration: "3:52 min",
           video: "https://youtu.be/4KxUJKoiqv0",
-          completed: true,
+          completed: false,
         ),
         Lesson(
           title: "Linhas de crédito e Gestão",
-          subtitle: "",
+          subtitle: "Nessa aula você irá aprender sobre linhas de crédito e gestão",
           duration: "3:52 min",
           video: "https://youtu.be/1zzVkVj7ry0",
-          completed: true,
+          completed: false,
         ),
         Lesson(
           title: "Planejamento Financeiro",
-          subtitle:
-              "Nessa aula você vai aprender a fazer um planejamento finaceiro adequado para o seu negócio para evitar problemas e ter uma ótima saude financeira",
+          subtitle: "Nessa aula você vai aprender a fazer um planejamento finaceiro adequado para o seu negócio para evitar problemas e ter uma ótima saude financeira",
           duration: "4:50 min",
           video: "https://youtu.be/T6GZdqpuEpE",
-          completed: true,
+          completed: false,
         ),
       ],
     ),
@@ -111,8 +107,7 @@ abstract class _CourseControllerBase with Store {
       lessons: [
         Lesson(
           title: "Plano Operacional",
-          subtitle:
-              "Nessa aula você vai aprender como montar um plano operacional ideal para o seu negócio",
+          subtitle: "Nessa aula você vai aprender como montar um plano operacional ideal para o seu negócio",
           duration: "1:43 min",
           video: "https://youtu.be/zL4OmN8m5X8",
           completed: true,
@@ -131,7 +126,7 @@ abstract class _CourseControllerBase with Store {
               "Dentro do plano estratégio a análise de Cenários é uma das partes mais importantes para um bom plano de negócio. Nessa aula você aprenderá como executar uma análise de cenários eficiente.",
           duration: "1:43 min",
           video: "https://youtu.be/yUJw1DmFQJY",
-          completed: true,
+          completed: false,
         ),
       ],
     ),
@@ -145,25 +140,24 @@ abstract class _CourseControllerBase with Store {
       lessons: [
         Lesson(
           title: "Redes Sociais 1",
-          subtitle: "",
+          subtitle: "Nessa aula você vai aprender como as redes sociais funcionam para o seu negocio",
           duration: "03:17 min",
           video: "https://youtu.be/VcEPt-DGs_8",
           completed: true,
         ),
         Lesson(
           title: "Redes Sociais 2 lives",
-          subtitle: "",
+          subtitle: "Nessa aula você vai aprender a interagir com seus clientes através das redes sociais",
           duration: "02:52 min",
           video: "https://youtu.be/Fh_3pwqXqzg",
-          completed: true,
+          completed: false,
         ),
         Lesson(
           title: "Plano de Marketing",
-          subtitle:
-              "Nessa aula você aprender como gerenciar uma camapnha de Marketing e como isso vai ser importante para alavancar o seu negócio",
+          subtitle: "Nessa aula você aprender como gerenciar uma camapnha de Marketing e como isso vai ser importante para alavancar o seu negócio",
           duration: "01:36 min",
           video: "https://youtu.be/JDIiCGJ8j0I",
-          completed: true,
+          completed: false,
         ),
       ],
     ),
