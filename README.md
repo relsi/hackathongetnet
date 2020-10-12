@@ -29,5 +29,5 @@ Para a construção do protótipo estamos utilizando o framework **Flutter**, do
   <img width="320px" alt="App Preview" src="https://github.com/relsi/hackathongetnet/blob/main/screenshot/flutter_06.png?raw=true"/>
   <img width="320px" alt="App Preview" src="https://github.com/relsi/hackathongetnet/blob/main/screenshot/flutter_07.png?raw=true"/>
   <img width="320px" alt="App Preview" src="https://github.com/relsi/hackathongetnet/blob/main/screenshot/flutter_08.png?raw=true"/>
-  <img width="320px" alt="App Preview" src="https://github.com/relsi/hackathongetnet/blob/main/screenshot/flutter_09.png?raw=true"/>
+  <img width="320px" alt="App Preview" src="https://github.com/relsi/hackathongetnet/blob/main/screenshot/flutter_09.png?v2&raw=true"/>
 </p>
