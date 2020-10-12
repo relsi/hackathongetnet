@@ -38,11 +38,11 @@ class _SignupPageState extends ModularState<SignupPage, SignupController> {
                 //   style: TextStyle(fontWeight: FontWeight.bold),
                 // ),
                 SizedBox(height: size.height * 0.03),
-                SvgPicture.asset(
-                  "assets/icons/signup.svg",
-                  width: size.width * 0.55,
+                Image.asset(
+                  "assets/images/logo.png",
+                  width: 200,
                 ),
-                SizedBox(height: size.height * 0.03),
+                SizedBox(height: 40),
                 RoundedTextField(
                   icon: Icons.person,
                   iconColor: colorScheme.primary,
