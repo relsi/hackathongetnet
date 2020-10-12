@@ -200,7 +200,7 @@ class _CoursePageState extends ModularState<CoursePage, CourseController> {
                             ),
                           ],
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
