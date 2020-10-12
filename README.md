@@ -1,4 +1,6 @@
-# PlayCred - Hackathon Getnet
+<p align="center"><img src="https://webtopia.com.br/img/playcred.png" width="350"></p><br/>
+
+# Hackathon Getnet | Shawee | Time 41 | *playCred*
 
 PlayCred é um aplicativo que visa fornecer linhas de crédito para pequenos e médios empreendedores de acordo com os seus conhecimentos sobre gestão e empreendedorismo e sua capacidade de gerir um negócio.
 
@@ -13,6 +15,6 @@ Para a construção do protótipo estamos utilizando o framework **Flutter** do 
 
  - [Luciano](https://github.com/luciano-work) - Desenvolvimento
  - Marcelo - Negócios
- - [Rafael](https://github.com/webtopia) - Desenvolvimento
+ - [Rafael](https://github.com/bertrandrafael) - Desenvolvimento
  - [Relsi](https://github.com/relsi) - Desenvolvimento
  - [Vagner](https://github.com/vameri) - UX
