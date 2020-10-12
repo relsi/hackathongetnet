@@ -14,6 +14,94 @@ class CoursePage extends StatefulWidget {
 class _CoursePageState extends ModularState<CoursePage, CourseController> {
   //use 'controller' variable to access controller
 
+  void config() {
+    showDialog(
+      context: context,
+      builder: (_) {
+        final colorScheme = Theme.of(context).colorScheme;
+        return AlertDialog(
+          backgroundColor: colorScheme.background,
+          content: Container(
+            height: 250.0,
+            width: 100.0,
+            child: Stack(
+              //crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Positioned(
+                  right: 0,
+                  top: 0,
+                  child: GestureDetector(
+                    onTap: () => Navigator.pop(_),
+                    child: Container(
+                      width: 20,
+                      height: 20,
+                      child: Center(
+                        child: Icon(
+                          Icons.close,
+                          color: colorScheme.onPrimary.withOpacity(0.5),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Column(
+                  children: [
+                    // Container(
+                    //   height: 100,
+                    //   width: 100,
+                    //   decoration: BoxDecoration(
+                    //     shape: BoxShape.circle,
+                    //     //color: colorScheme.primary.withOpacity(0.12),
+                    //     image: DecorationImage(
+                    //       alignment: Alignment.center,
+                    //       image: AssetImage('assets/images/avatar.jpg'),
+                    //       fit: BoxFit.cover,
+                    //     ),
+                    //   ),
+                    // ),
+                    Center(
+                      child: Image(
+                        image: AssetImage('assets/images/qrcode.png'),
+                        height: 100.0,
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Text(
+                      "Olá Pedro",
+                      style: Theme.of(context).textTheme.title,
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(height: 5),
+                    Text(
+                      "Compartilhe seu perfil",
+                      maxLines: 4,
+                      textAlign: TextAlign.center,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        color: colorScheme.onSurface.withOpacity(.65),
+                      ),
+                    ),
+                    SizedBox(height: 15),
+
+                    FlatButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                      ),
+                      color: colorScheme.primary,
+                      textColor: Colors.white,
+                      onPressed: () {},
+                      child: Text("COMPARTILHAR"),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
@@ -34,8 +122,12 @@ class _CoursePageState extends ModularState<CoursePage, CourseController> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
-                    CircleAvatar(
-                      backgroundImage: AssetImage('assets/images/' + controller.avatar),
+                    GestureDetector(
+                      onTap: () => config(),
+                      child: CircleAvatar(
+                        backgroundColor: colorScheme.onBackground,
+                        backgroundImage: AssetImage('assets/images/avatar.jpg'),
+                      ),
                     ),
                   ],
                 ),
@@ -87,7 +179,7 @@ class _CoursePageState extends ModularState<CoursePage, CourseController> {
                                 Text("Venha ser premium", style: textTheme.subtitle1.copyWith(fontWeight: FontWeight.w400)),
                                 SizedBox(height: 2.0),
                                 Text(
-                                  "Conteudo exclusivo",
+                                  "Conteúdo exclusivo",
                                   style: textTheme.headline5.copyWith(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 18,

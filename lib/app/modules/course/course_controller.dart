@@ -11,9 +11,6 @@ class CourseController = _CourseControllerBase with _$CourseController;
 
 abstract class _CourseControllerBase with Store {
   @observable
-  String avatar = "avatar.jpg";
-
-  @observable
   List<Courses> courses = [
     Courses(
       title: "Conhecimento de Mercado",
