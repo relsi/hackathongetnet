@@ -185,7 +185,7 @@ class Panel extends StatelessWidget {
                       ),
                       SizedBox(height: 5),
                       Text(
-                        "Aproveite todas as vantagens deser premium",
+                        "Aproveite todas as vantagens de ser premium",
                         maxLines: 4,
                         textAlign: TextAlign.center,
                         overflow: TextOverflow.ellipsis,

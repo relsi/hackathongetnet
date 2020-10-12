@@ -123,7 +123,7 @@ class _CoursePageState extends ModularState<CoursePage, CourseController> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
                     GestureDetector(
-                      onTap: () => config(),
+                      onTap: () => config(), // Navigator.of(context).pushNamed("/profile")
                       child: CircleAvatar(
                         backgroundColor: colorScheme.onBackground,
                         backgroundImage: AssetImage('assets/images/avatar.jpg'),
