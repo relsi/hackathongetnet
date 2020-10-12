@@ -81,7 +81,11 @@ class CustomCard extends StatelessWidget {
                     ),
                     SizedBox(height: 15),
                     FlatButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                      ),
                       color: colorScheme.primary,
+                      textColor: Colors.white,
                       onPressed: () {},
                       child: Text("Saber mais"),
                     )
