@@ -22,48 +22,111 @@ class _CoursePageState extends ModularState<CoursePage, CourseController> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: colorScheme.onBackground,
-        body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 12.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              SizedBox(height: 20.0),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
-//                  Icon(
-//                    Icons.menu,
-//                    color: colorScheme.onPrimary,
-//                  ),
-                  CircleAvatar(
-                    backgroundImage: AssetImage('assets/images/' + controller.avatar),
-                  ),
-                ],
-              ),
-              SizedBox(height: 12),
-              Text("Olá Pedro,", style: textTheme.headline5.copyWith(fontWeight: FontWeight.w600)),
-              Text(
-                "Encontre o curso que deseja aprender",
-                style: textTheme.subtitle1.copyWith(
-                  color: colorScheme.onPrimary.withOpacity(0.5),
+        body: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                SizedBox(height: 20.0),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    CircleAvatar(
+                      backgroundImage: AssetImage('assets/images/' + controller.avatar),
+                    ),
+                  ],
                 ),
-              ),
-              SizedBox(height: 20.0),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text("Cursos", style: textTheme.headline6),
-                  Text(
-                    "Ver todos",
-                    style: textTheme.subtitle1.copyWith(color: colorScheme.primary),
+                SizedBox(height: 12),
+                Text("Olá Pedro,", style: textTheme.headline5.copyWith(fontWeight: FontWeight.w600)),
+                Text(
+                  "Encontre o curso que deseja aprender",
+                  style: textTheme.subtitle1.copyWith(
+                    color: colorScheme.onPrimary.withOpacity(0.5),
                   ),
-                ],
-              ),
-              SizedBox(height: 20),
-              Expanded(
-                child: GridView.builder(
-                  physics: BouncingScrollPhysics(),
+                ),
+                SizedBox(height: 20.0),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: Color(0xFF3acc9e),
+                    image: DecorationImage(
+                      alignment: Alignment.bottomRight,
+                      image: AssetImage('assets/images/premium.png'),
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        right: 15,
+                        top: 10,
+                        child: GestureDetector(
+                          onTap: () {},
+                          child: Container(
+                            width: 20,
+                            height: 20,
+                            child: Center(
+                              child: Icon(
+                                Icons.close,
+                                color: colorScheme.onPrimary.withOpacity(0.5),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Row(
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("Venha ser premium", style: textTheme.subtitle1.copyWith(fontWeight: FontWeight.w400)),
+                                SizedBox(height: 2.0),
+                                Text(
+                                  "Conteudo exclusivo",
+                                  style: textTheme.headline5.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18,
+                                    color: lightColor,
+                                  ),
+                                ),
+                                SizedBox(height: 3.0),
+                                FlatButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                  color: Colors.white,
+                                  textColor: lightColor,
+                                  onPressed: () {},
+                                  child: Text("Ser pemium"),
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                SizedBox(height: 20.0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text("Cursos", style: textTheme.headline6),
+                    Text(
+                      "Ver todos",
+                      style: textTheme.subtitle1.copyWith(color: colorScheme.primary),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 30),
+                GridView.builder(
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
                   itemCount: controller.courses.length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
@@ -109,9 +172,9 @@ class _CoursePageState extends ModularState<CoursePage, CourseController> {
                     );
                   },
                 ),
-              ),
-              //SizedBox(height: 20.0)
-            ],
+                SizedBox(height: 20.0)
+              ],
+            ),
           ),
         ),
       ),

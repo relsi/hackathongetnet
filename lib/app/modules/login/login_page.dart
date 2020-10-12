@@ -22,6 +22,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     final colorScheme = Theme.of(context).colorScheme;
+
     return Scaffold(
       backgroundColor: colorScheme.background,
       body: Container(
@@ -53,7 +54,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                 children: <Widget>[
                   SizedBox(height: size.height * 0.03),
                   Image.asset(
-                    "assets/images/logolight.png",
+                    "assets/images/logo.png",
                     width: 200,
                   ),
                   SizedBox(height: 40),

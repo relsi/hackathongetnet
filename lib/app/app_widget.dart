@@ -10,7 +10,7 @@ class AppWidget extends StatelessWidget {
       navigatorKey: Modular.navigatorKey,
       debugShowCheckedModeBanner: false,
       title: 'PlayCred',
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
       theme: AppTheme.lightThemeData,
       darkTheme: AppTheme.darkThemeData,
       initialRoute: '/',

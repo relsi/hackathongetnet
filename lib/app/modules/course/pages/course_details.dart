@@ -131,6 +131,88 @@ class Panel extends StatelessWidget {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
+
+    void premium() {
+      showDialog(
+        context: context,
+        builder: (_) {
+          final colorScheme = Theme.of(context).colorScheme;
+          return AlertDialog(
+            backgroundColor: colorScheme.background,
+            content: Container(
+              height: 300.0,
+              width: 100.0,
+              child: Stack(
+                //crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Positioned(
+                    right: 0,
+                    top: 0,
+                    child: GestureDetector(
+                      onTap: () => Navigator.pop(_),
+                      child: Container(
+                        width: 20,
+                        height: 20,
+                        child: Center(
+                          child: Icon(
+                            Icons.close,
+                            color: colorScheme.onPrimary.withOpacity(0.5),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        height: 120,
+                        width: 120,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: colorScheme.primary.withOpacity(0.12),
+                        ),
+                        child: Icon(
+                          Icons.lock,
+                          color: colorScheme.primary,
+                          size: 60,
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      Text(
+                        "Conteúdo exclusivo",
+                        style: Theme.of(context).textTheme.title,
+                        textAlign: TextAlign.center,
+                      ),
+                      SizedBox(height: 5),
+                      Text(
+                        "Aproveite todas as vantagens deser premium",
+                        maxLines: 4,
+                        textAlign: TextAlign.center,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          color: colorScheme.onSurface.withOpacity(.65),
+                        ),
+                      ),
+                      SizedBox(height: 15),
+                      FlatButton(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30.0),
+                        ),
+                        color: colorScheme.primary,
+                        textColor: Colors.white,
+                        onPressed: () {},
+                        child: Text("VER PLANOS"),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
+      );
+    }
+
     return Container(
       color: colorScheme.onBackground,
       child: Container(
@@ -142,8 +224,22 @@ class Panel extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Text("Conteúdo", style: textTheme.headline6),
-                  SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        width: 30,
+                        height: 5,
+                        decoration: BoxDecoration(
+                          color: colorScheme.onPrimary.withOpacity(0.5),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(12.0),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  //SizedBox(height: 10),
                   Expanded(
                     child: ListView.builder(
                       physics: BouncingScrollPhysics(),
@@ -176,9 +272,7 @@ class Panel extends StatelessWidget {
                             ),
                           ),
                           trailing: GestureDetector(
-                            onTap: () {
-                              Navigator.of(context).pushNamed("/video", arguments: _lesson);
-                            },
+                            onTap: () => _lesson.completed ? Navigator.of(context).pushNamed("/video", arguments: _lesson) : premium(),
                             child: Container(
                               height: 40,
                               width: 40,
@@ -187,7 +281,7 @@ class Panel extends StatelessWidget {
                                 color: _lesson.completed ? colorScheme.primary : colorScheme.onPrimary.withOpacity(0.2),
                               ),
                               child: Icon(
-                                Icons.play_arrow,
+                                _lesson.completed ? Icons.play_arrow : Icons.lock,
                                 color: _lesson.completed ? Colors.white : colorScheme.onPrimary.withOpacity(0.2),
                               ),
                             ),

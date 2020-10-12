@@ -32,15 +32,11 @@ class _ScorePageState extends ModularState<ScorePage, ScoreController> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: 40.0),
-                Text("Score",
-                    style: textTheme.headline5
-                        .copyWith(fontWeight: FontWeight.w600)),
-                SizedBox(height: 4),
+                Text("Score", style: textTheme.headline5.copyWith(fontWeight: FontWeight.w600)),
                 Text(
                   "Acompanhe sua pontuação geral",
                   style: textTheme.subtitle1.copyWith(
                     color: colorScheme.onPrimary.withOpacity(0.5),
-                    height: 1.4,
                   ),
                 ),
                 SizedBox(height: 20.0),
@@ -124,17 +120,11 @@ class _ScorePageState extends ModularState<ScorePage, ScoreController> {
                             children: <Widget>[
                               Text(
                                 "1.901",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline2
-                                    .copyWith(
-                                        color: Color(0xFF3FDFAE), height: 1.2),
+                                style: Theme.of(context).textTheme.headline2.copyWith(color: Color(0xFF3FDFAE), height: 1.2),
                               ),
                               Text(
                                 "51.9%",
-                                style: TextStyle(
-                                    color:
-                                        colorScheme.onSurface.withOpacity(0.5)),
+                                style: TextStyle(color: colorScheme.onSurface.withOpacity(0.5)),
                               ),
                               //Icon(Icons.thumb_up)
                             ],
@@ -161,15 +151,13 @@ class _ScorePageState extends ModularState<ScorePage, ScoreController> {
                                     "6.43",
                                     style: TextStyle(
                                       fontSize: 14,
-                                      color: colorScheme.onSurface
-                                          .withOpacity(0.8),
+                                      color: colorScheme.onSurface.withOpacity(0.8),
                                     ),
                                   ),
                                   Text(
                                     "Progresso na última semana",
                                     style: TextStyle(
-                                      color: colorScheme.onSurface
-                                          .withOpacity(0.5),
+                                      color: colorScheme.onSurface.withOpacity(0.5),
                                       height: 1.5,
                                     ),
                                   ),
