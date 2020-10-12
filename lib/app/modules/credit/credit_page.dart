@@ -53,7 +53,7 @@ class _CreditPageState extends ModularState<CreditPage, CreditController> {
                 child: Row(
                   children: <Widget>[
                     CustomCard(
-                      title: "PlayCred",
+                      title: "qualifica.ME",
                       icon: Icons.person_add,
                       color: Color(0xFF5856D6),
                       description:
