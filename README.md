@@ -1,4 +1,4 @@
-<p align="center"><img src="https://webtopia.com.br/img/https://webtopia.com.br/img/qualificame.png.png" width="350"></p><br/>
+<p align="center"><img src="https://webtopia.com.br/img/qualificame.png" width="350"></p><br/>
 
 # Hackathon Getnet | Shawee | Time 41 | *playCred*
 
