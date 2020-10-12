@@ -73,6 +73,7 @@ class CustomCard extends StatelessWidget {
                     Text(
                       description,
                       maxLines: 4,
+                      textAlign: TextAlign.center,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         color: colorScheme.onSurface.withOpacity(.65),

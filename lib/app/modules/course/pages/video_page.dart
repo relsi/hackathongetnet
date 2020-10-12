@@ -75,7 +75,7 @@ class _VideoPageState extends State<VideoPage> {
               SizedBox(height: 20.0),
               Center(
                 child: RoundedButton(
-                  color: colorScheme.secondary,
+                  color: Color(0xFF8568ff),
                   text: "FAZER O TESTE",
                   textColor: Colors.white,
                   press: () {},
